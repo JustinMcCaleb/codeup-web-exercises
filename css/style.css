@@ -1,4 +1,79 @@
-.fancy-header {
-    color: purple;
+main>h1 {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 3.35em;
+    text-align: center;
+    color: #000000;
+}
+
+h2 {
+    color: #004769;
     text-decoration: underline;
+}
+
+
+body {
+    align-content: center;
+    background-color: #e7e7e9;
+    background-image: url("../img/gray-wall.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: 1.25em;
+    font-family: 'Muli', sans-serif;
+}
+
+ul {
+    list-style: square;
+}
+
+table {
+    margin: auto;
+    font-size: 2em;
+    text-align: left;
+    border-style: solid;
+    border-color: black;
+}
+
+th {
+    padding: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+td {
+    padding: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+a:link {
+    color: #00f0ff;
+}
+
+/* visited link (:visited) */
+a:visited {
+    color: #0713db;
+}
+
+/* mouse hover over link (:hover) */
+a:hover {
+    color: #b200ae;
+}
+
+/* active/selected link (:active) */
+a:active {
+    color:lime;
+}
+
+/*img {*/
+/*    opacity: .5;*/
+/*}*/
+
+img:hover {
+    opacity: .5;
+}
+
+.table-header {
+    text-align: center;
 }
