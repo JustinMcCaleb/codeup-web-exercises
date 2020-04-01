@@ -41,8 +41,8 @@ section {
     position: relative;
     display: block;
     color: white;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-right: 100px solid transparent;
     border-bottom: 70px solid white;
     border-left: 100px solid transparent;
@@ -67,8 +67,8 @@ section {
     color: white;
     top: 3px;
     left: -105px;
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
     border-right: 100px solid transparent;
     border-bottom: 70px solid white;
     border-left: 100px solid transparent;
