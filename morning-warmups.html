@@ -19,7 +19,7 @@
         //         return false;
         //     }
         // }
-        function isAtLeast8Long(str) {
+        // function isAtLeast8Long(str) {
             // instructor's first attempt, it works but he made it simpler
             //     if (str.length >= 8) {
             //         return true;
@@ -27,44 +27,53 @@
             //         return false;
             //     }
             // }
-            return str.length >= 8;
+            // return str.length >= 8;
+        // }
+
+        // console.log(isAtLeast8Long("cat")); // false
+        // console.log(isAtLeast8Long("justinmccaleb")); // true
+        //
+        // // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two
+        // function twoMoreAwayFromZero(x) {
+        //     if (x >= 0) {
+        //         return (x + 2);
+        //     } else {
+        //         return (x - 2);
+        //     }
+        // }
+        // console.log(twoMoreAwayFromZero(2)); //will return 4
+        // console.log(twoMoreAwayFromZero(0)); //will return 2
+        // console.log(twoMoreAwayFromZero(0.5)); //will return 2.5
+        // console.log(twoMoreAwayFromZero(-2)); //will return -4
+        // console.log(twoMoreAwayFromZero(-3.5)); //will return -5.5
+        //
+        // // Write a function that returns the quotient of two numbers (Assume the arguments will be numbers)
+        // function quotientOfTwoNum(x, y) {
+        //     return (x / y);
+        // }
+        // console.log(quotientOfTwoNum(10, 5)); //2
+        // console.log(quotientOfTwoNum(100, 10)); //10
+        //
+        // //    Test Test Test
+        //
+        // // Write a JavaScript function that returns the number 7
+        //
+        // function returnSeven() {
+        //     return 7;
+        // }
+        //
+        // console.log(returnSeven(8), 7);
+        // console.log(returnSeven("tree"), 7);
+
+        // Write a JavaScript function that takes in a number and returns true if its a positive number and false if negative.
+
+        function isPositive(num) {
+            return num >= 0;
         }
 
-        console.log(isAtLeast8Long("cat")); // false
-        console.log(isAtLeast8Long("justinmccaleb")); // true
-
-        // Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two
-        function twoMoreAwayFromZero(x) {
-            if (x >= 0) {
-                return (x + 2);
-            } else {
-                return (x - 2);
-            }
-        }
-        console.log(twoMoreAwayFromZero(2)); //will return 4
-        console.log(twoMoreAwayFromZero(0)); //will return 2
-        console.log(twoMoreAwayFromZero(0.5)); //will return 2.5
-        console.log(twoMoreAwayFromZero(-2)); //will return -4
-        console.log(twoMoreAwayFromZero(-3.5)); //will return -5.5
-
-        // Write a function that returns the quotient of two numbers (Assume the arguments will be numbers)
-        function quotientOfTwoNum(x, y) {
-            return (x / y);
-        }
-        console.log(quotientOfTwoNum(10, 5)); //2
-        console.log(quotientOfTwoNum(100, 10)); //10
-
-        //    Test Test Test
-
-        // Write a JavaScript function that returns the number 7
-
-        function returnSeven() {
-            return 7;
-        }
-
-        console.log(returnSeven(8), 7);
-        console.log(returnSeven("tree"), 7);
-
+        console.log(isPositive(67), true);
+        console.log(isPositive(-25), false);
+        console.log(isPositive(90), true);
 
     </script>
     </body>
