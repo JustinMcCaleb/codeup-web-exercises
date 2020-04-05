@@ -1,73 +1,110 @@
-body {
-    background-color: #00f0ff;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+    body {
+        background-color: #00f0ff;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+/*Nav Bar*/
+    .nav {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        height: 15vh;
 }
+    .nav-container {
+        background-color: lightgray;
+        width: 100%;
+        /*height: 3em;*/
+        height: 5vh;
+        display: flex;
+        flex-direction: column;
+    }
 
-.nav-container {
-    background-color: lightgray;
-    width: 100%;
-    /*height: 3em;*/
-    height: 5vh;
-    display: flex;
-    /*justify-content: flex-end;*/
-}
+    img {
+        height: 2vh;
+    }
 
-.bbc-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-}
+    .nav-list {
+        display: flex;
+        list-style: none;
+        text-decoration: none;
+        padding: 0;
+        /*margin: 0;*/
+        align-items: center;
+        /*margin-left: auto;*/
+        justify-content: space-between;
+    }
 
-img {
-    height: 2vh;
-}
+    li:nth-of-type(1) {
+        margin-right: auto;
+        border: none;
+    }
 
-.nav-list {
-    display: flex;
-    width: 25%;
-    list-style: none;
-    text-decoration: none;
-    padding: 0;
-    /*margin: 0;*/
-    align-items: center;
-    margin-left: auto;
-    justify-content: space-between;
-}
+    li {
+        padding: 0 .5em;
+        border-color: black;
+        border-style: none solid;
+        border-width: 1px;
+    }
 
-a {
-    text-decoration: none;
-    color: black;
-}
+    a {
+        text-decoration: none;
+        color: black;
+    }
 
-a:hover {
-    color: #00ff72;
-}
+    a:hover {
+        color: #00ff72;
+    }
+/*End Nav Bar*/
+
+/*404 Error Message*/
+    .error-message {
+        display: flex;
+        background-color: #4945b6;
+        width: 100%;
+        /*height: 8em;*/
+        height: 10vh;
+        align-items: center;
+    }
+
+    .error-heading {
+        font-size: 1.5em;
+        color: white;
+    }
+
+/*End 404 Message*/
+
+/*Main content of page*/
+
+    .content {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .content>img {
+        display: inline-block;
+        height: 5vh;
+        width: 5vh;
+    }
+
+/*End Main Content*/
 
 
-.error-message {
-    background-color: #4945b6;
-    width: 100%;
-    /*height: 8em;*/
-    height: 10vh;
-}
-
-.main {
-    background-color: white;
-    width: 100%;
-    /*height: 50em;*/
-    height: 70vh;
-}
-
-.bottom-page {
-    background-color: darkgrey;
-    width: 100%;
-    /*height: 6em;*/
-    height: 15vh;
-}
+/*Footer*/
+    .bottom-page {
+        background-color: darkgrey;
+        width: 100%;
+        /*height: 6em;*/
+        height: 15vh;
+    }
 
 
+/*Footer*/
