@@ -73,7 +73,7 @@ header a:hover {
 .header-background {
     background: purple;
     /* TODO: define the grid area of this element to take up the entire first row of the .wrapper grid  */
-    grid-area: 1 / 1 / 1 / -1;
+    grid-area: 1 / 1 / 2 / -1;
 }
 
 nav ul {
