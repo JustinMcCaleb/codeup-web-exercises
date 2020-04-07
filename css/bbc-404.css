@@ -1,110 +1,42 @@
-    body {
-        background-color: #00f0ff;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
-
-/*Nav Bar*/
-    .nav {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        height: 15vh;
+body {
+    display: inline-block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
-    .nav-container {
-        background-color: lightgray;
-        width: 100%;
-        /*height: 3em;*/
-        height: 5vh;
-        display: flex;
-        flex-direction: column;
-    }
 
-    img {
-        height: 2vh;
-    }
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 5vh 10vh 1fr 15vh;
+}
 
-    .nav-list {
-        display: flex;
-        list-style: none;
-        text-decoration: none;
-        padding: 0;
-        /*margin: 0;*/
-        align-items: center;
-        /*margin-left: auto;*/
-        justify-content: space-between;
-    }
+.nav {
+    grid-area: 1 / 2 / 2 / 3;
+}
 
-    li:nth-of-type(1) {
-        margin-right: auto;
-        border: none;
-    }
+.error {
+    background-color: #4e4ba4;
+    grid-area: 2 / 2 / 3 / 3;
+}
 
-    li {
-        padding: 0 .5em;
-        border-color: black;
-        border-style: none solid;
-        border-width: 1px;
-    }
+.error-color {
+    background-color: #4e4ba4;
+    grid-area: 2 / 1 / 3 / 5;
+    z-index: -1;
+}
 
-    a {
-        text-decoration: none;
-        color: black;
-    }
+main {
+    grid-area: 3 / 2 / 4 / 3;
+}
 
-    a:hover {
-        color: #00ff72;
-    }
-/*End Nav Bar*/
+footer {
+    background-color: #4C4C4C;
+    grid-area: 4 / 2 / 5 / 3;
+}
 
-/*404 Error Message*/
-    .error-message {
-        display: flex;
-        background-color: #4945b6;
-        width: 100%;
-        /*height: 8em;*/
-        height: 10vh;
-        align-items: center;
-    }
-
-    .error-heading {
-        font-size: 1.5em;
-        color: white;
-    }
-
-/*End 404 Message*/
-
-/*Main content of page*/
-
-    .content {
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        height: 70vh;
-    }
-
-    .content>img {
-        display: inline-block;
-        height: 5vh;
-        width: 5vh;
-    }
-
-/*End Main Content*/
-
-
-/*Footer*/
-    .bottom-page {
-        background-color: darkgrey;
-        width: 100%;
-        /*height: 6em;*/
-        height: 15vh;
-    }
-
-
-/*Footer*/
+.footer-color {
+    background-color: #4C4C4C;
+    grid-area: 4 / 1 / 5 / 5;
+}
