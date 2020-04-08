@@ -20,33 +20,20 @@
                 grid-gap: 1em;
             }
 
-            .header {
-                grid-area: 1 / 1 / 2 / -1;
-            }
+            .header {grid-area: 1 / 1 / 2 / -1}
+            .nav {grid-area: 2 / 1 / 4 / 2}
+            .article {grid-area: 2 / 2 / 3 / 3}
+            .ads {grid-area: 2 / 3 / 3 / 4}
+            .footer {grid-area: 3 / 2 / -1 / -1}
 
-            .nav {
-                grid-area: 2 / 1 / 4 / 2;
-            }
-
-            .article {
-                grid-area: 2 / 2 / 3 / 3;
-            }
-
-            .ads {
-                grid-area: 2 / 3 / 3 / 4;
-            }
-
-            .footer {
-                grid-area: 3 / 2 / -1 / -1;
-            }
-
-            div>div {
+            .wrapper>div {
                 background-color: #ffd700;
                 padding: 1em;
                 font-family: 'Roboto', sans-serif;
                 font-weight: bold;
                 font-size: 1.5em;
             }
+
         </style>
     </head>
     <body>
