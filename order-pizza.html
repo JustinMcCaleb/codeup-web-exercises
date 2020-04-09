@@ -5,20 +5,23 @@
         <meta name=”viewport” content=”width=device-width″>
         <title>Title</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/custom.css">
         <script src="https://kit.fontawesome.com/1a038e3095.js" crossorigin="anonymous"></script>
     </head>
     <body>
+
+
     <nav class="d-flex navbar navbar-light bg-light">
-        <div class="nav-item mx-2 ">
+        <div class="nav-item mx-2">
             <a class="navbar-brand" href="#">Pizza World</a>
         </div>
-        <div class="nav-item nav-link ">
+        <div class="nav-item nav-link">
             <a class="text-dark" href="#">Order Online</a>
         </div>
-        <div class="nav-item nav-link ">
+        <div class="nav-item nav-link">
             <a class="text-dark" href="#">Menu</a>
         </div>
-        <div class="nav-item nav-link ">
+        <div class="nav-item nav-link">
             <form class="form-inline" action="#">
                 <input class="form-control" type="search" placeholder="Zip Code">
                 <button class="btn btn-outline-secondary ml-1">Search stores near you!</button>
@@ -28,6 +31,26 @@
             <a class="text-dark" href="#"><i class="fas fa-user mr-1"></i>Sign Up</a>
         </div>
     </nav>
+
+
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <div class="jumbotron m-0 p-0 text-center d-flex align-items-center">
+            <h1>Welcome to Pizza World!</h1>
+        </div>
+        <h2 class="pl-5 mr-auto">Build your own pizza!</h2>
+        <nav class="pl-5 mr-auto">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+            </div>
+        </nav>
+        <div class="tab-content pl-5 mr-auto" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

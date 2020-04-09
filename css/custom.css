@@ -1,0 +1,13 @@
+.jumbotron {
+    /*background-color: white;*/
+    background-image: url("../img/pizza.png");
+    width: 1323px;
+    height: 346px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+    width: 100%;
+    background-color: rgba(211, 211, 211, 0.68);
+}
