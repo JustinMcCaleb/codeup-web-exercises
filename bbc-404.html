@@ -4,15 +4,35 @@
         <meta charset="UTF-8">
         <title>BBC - Error 404: Not Found</title>
         <link rel="stylesheet" href="css/bbc-404.css">
+        <script src="https://kit.fontawesome.com/1a038e3095.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrapper">
-            <nav class="nav">nav</nav>
-            <div class="error">error</div>
-            <div class="error-color"></div>
-            <main class="main">main</main>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a class="bbc-anchor" href="#"><img class="bbc-logo" src="img/bbc-logo.png" alt="bbc logo"></a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">Home</a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">News</a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">Sport</a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">Weather</a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">iPlayer</a></li>
+                    <li class="nav-links"><a class="list-anchor" href="#">Sounds</a></li>
+                </ul>
+            </nav>
+            <div class="error">
+                <p>404 <strong>Not Found</strong></p>
+            </div>
+            <main class="main">
+                <img src="img/bbc-404-img.gif" alt="two cartoon pigs">
+                <h2>Sorry, we couldn't find that page</h2>
+                <p>Check the page address or search for it below.</p>
+                <form method="get" action="#">
+                    <input id="search-bar" type="search" placeholder="Search">
+                    <button type="submit"><i class="fas fa-carrot"></i></button>
+                </form>
+                <a href="#">BBC Homepage</a>
+            </main>
             <footer>footer</footer>
-            <div class="footer-color"></div>
         </div>
     </body>
 </html>
