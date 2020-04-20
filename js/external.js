@@ -33,3 +33,17 @@
         var totalWeeklyPay = (googleRatePerHourDollar * googleWeeklyHours) + (amazonRatePerHourDollar * amazonWeeklyHours) + (facebookRatePerHourDollar * facebookWeeklyHours);
         alert(totalWeeklyPay);
 
+     //Task 3
+        var availableSeatsInClass = false;
+        var noScheduleConflict = true;
+
+        var canEnroll = (availableSeatsInClass && noScheduleConflict);
+        alert(canEnroll);
+
+     //Task 4
+        var itemsInCart = 1;
+        var offerValid = true;
+        var premiumMember = true;
+
+        var offerCanBeApplied = (itemsInCart > 2 || premiumMember) && offerValid;
+        alert(offerCanBeApplied);
