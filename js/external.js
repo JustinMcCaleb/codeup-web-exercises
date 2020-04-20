@@ -41,9 +41,9 @@
         alert(canEnroll);
 
      //Task 4
-        var itemsInCart = 1;
+        var itemsInCart = parseInt(prompt('How many items do you have in your cart?'));
         var offerValid = true;
-        var premiumMember = true;
+        var premiumMember = false;
 
         var offerCanBeApplied = (itemsInCart > 2 || premiumMember) && offerValid;
         alert(offerCanBeApplied);
