@@ -90,7 +90,7 @@ var random = Math.floor((Math.random() * 3) + 1);
     var billTotal = parseFloat(prompt('What is your bill total?'));
     var tipPercentage = parseFloat(prompt('What percent would you like to tip?'));
 
-    alert('Great! Your tip amount today is $' + calculateTip(billTotal, tipPercentage) + '.');
+    alert('Great! Your tip amount today is $' + calculateTip(billTotal, tipPercentage));
 
 /**
  * TODO:
@@ -107,7 +107,11 @@ var random = Math.floor((Math.random() * 3) + 1);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
+    var originalPrice = parseFloat(prompt('What is the total price?'));
+    var discountPercent = .20;
+
     function applyDiscount(price, discount) {
-        return price * discount;
+        var discountTotal = price * discount;
+        return price - discountTotal;
     }
-    console.log(applyDiscount(100, .5), 50);
+    console.log('Your discounted price is $' + applyDiscount(originalPrice, discountPercent));
