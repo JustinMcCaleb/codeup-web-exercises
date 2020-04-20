@@ -16,15 +16,15 @@
         var littleMermaid = parseInt(prompt('How long are you renting the Little Mermaid?'));
         var brotherBear = parseInt(prompt('How long are you renting Brother Bear?'));
         var hercules = parseInt(prompt('How long are you renting Hercules?'));
-        var priceOfMoviePerDayDollars = 3;
+        var priceOfMoviePerDayDollars = parseInt(prompt('What is the daily rent price?'));
 
         var totalSpentOnMovies = (littleMermaid + brotherBear + hercules) * priceOfMoviePerDayDollars;
         alert(totalSpentOnMovies);
 
     //Task 2
-        var googleRatePerHourDollar = 400;
-        var amazonRatePerHourDollar = 380;
-        var facebookRatePerHourDollar = 350;
+        var googleRatePerHourDollar = parseInt(prompt('What is your Google hourly rate?'));
+        var amazonRatePerHourDollar = parseInt(prompt('What is your Amazon hourly rate?'));;
+        var facebookRatePerHourDollar = parseInt(prompt('What is your Facebook hourly rate?'));;
 
         var googleWeeklyHours = parseInt(prompt('How many hours did you work for google this week?'));
         var amazonWeeklyHours = parseInt(prompt('How many hours did you work for amazon this week?'));
