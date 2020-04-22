@@ -39,7 +39,15 @@
     console.log(isFive('five'), false);
 
 //addFive
-    function addFive() {
+    function addFive(input) {
+        return input + 5;
+    }
+    console.log(addFive(25), 30)
+
+//isMultipleOfFive
+    function isMultipleOfFive(input) {
 
     }
+
+
 })();

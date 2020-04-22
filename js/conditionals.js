@@ -54,7 +54,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Refactor your above function to use a switch-case statement
  */
 
-    function analyzeColor(inputColor) {
+    function analyzeColorSwitch(inputColor) {
         switch (inputColor) {
             case 'blue':
                 return 'Blue is the color of my eyes.';
@@ -70,7 +70,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
         }
     }
 
-    console.log(analyzeColor(randomColor));
+    console.log(analyzeColorSwitch(randomColor));
 
 
 /**
@@ -79,25 +79,9 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
-    // var userColorInput = prompt('Type in a color.').toLowerCase();
+    var userColorInput = prompt('Type in a color.').toLowerCase();
 
-    // function analyzeColor(inputColor) {
-    //     switch (inputColor) {
-    //         case 'blue':
-    //             alert('Blue is the color of my eyes.');
-    //             break;
-    //         case 'red':
-    //             alert('Red is a primary color!');
-    //             break;
-    //         case 'cyan':
-    //             alert('I\'m honestly not sure what cyan looks like.');
-    //             break;
-    //         default:
-    //             alert('That does not match any predefined colors.');
-    //     }
-    // }
-    // analyzeColor(userColorInput);
-
+    alert(analyzeColorSwitch(userColorInput));
 
 /* ########################################################################## */
 
@@ -173,6 +157,9 @@ console.log(calculateTotal(5, 100)); // returns 0
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+//=============================NEED TO REFACTOR THIS.
+    //My 'alert functions' should have return instead of alert so that data can be used in other places in the document.
+
         var wouldLikeToEnterNumber;
 
         if (confirm('Would you like to enter a number?') !== true) {
