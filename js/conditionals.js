@@ -173,13 +173,13 @@ console.log(calculateTotal(5, 100)); // returns 0
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-        var wouldLikeToEnterNumber = confirm('Would you like to enter a number?');
+        var wouldLikeToEnterNumber;
 
-        if (wouldLikeToEnterNumber !== true) {
+        if (confirm('Would you like to enter a number?') !== true) {
             alert('Thank you for your time.')
         }else {
             var enteredNumber = parseInt(prompt('Please enter a number'));
-        }
+
 
         if (!isNaN(enteredNumber)) {
             isEvenOrOdd(enteredNumber);
@@ -187,13 +187,7 @@ console.log(calculateTotal(5, 100)); // returns 0
             isNegativeOrPositive(enteredNumber);
         } else {
             alert('I\'m sorry, that is not a number.');
-        }
-
-    // function isNotANumber(input) {
-    //     if (isNaN(input)) {
-    //         alert('I\'m sorry, that is not a number.');
-    //     }else {}
-    // }
+        }}
 
 //=========================== New Function
     function isEvenOrOdd(num) {
