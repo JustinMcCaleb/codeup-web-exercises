@@ -173,70 +173,55 @@ console.log(calculateTotal(5, 100)); // returns 0
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
-var wouldLikeToEnterNumber = confirm('Would you like to enter a number?');
+        var wouldLikeToEnterNumber = confirm('Would you like to enter a number?');
 
-
-if (wouldLikeToEnterNumber) {
-    var enteredNumber = parseInt(prompt('Please enter a number'));
-}else {
-}
-
-//-to see if the input is a number or not
-        function isNotANumber(input) {
-            if (isNaN(input)) {
-                alert('I\'m sorry, that is not a number.');
-            }else {
-                function isEvenOrOdd(num) {
-                    if (num % 2 === 0) {
-                        alert('Your number is even!');
-                    } else if (num % 2 !== 0){
-                        alert('Your number is odd!');
-                    }
-                }
-                isEvenOrOdd(enteredNumber);
-
-
-                function numberPlusOneHundred (input) {
-                    alert('Your number + 100 is: ' + (input + 100));
-                }
-                numberPlusOneHundred(enteredNumber);
-
-
-                function isNegativeOrPositive(input) {
-                    if (input < 0) {
-                        alert('Your number is NEGATIVE!');
-                    } else if (input > 0) {
-                        alert('Your number is POSITIVE!');
-                    }
-                }
-                isNegativeOrPositive(enteredNumber);
-            }
+        if (wouldLikeToEnterNumber !== true) {
+            alert('Thank you for your time.')
+        }else {
+            var enteredNumber = parseInt(prompt('Please enter a number'));
         }
-        isNotANumber(enteredNumber);
 
-//- whether the number is even or odd
-//         function isEvenOrOdd(num) {
-//             if (num % 2 === 0) {
-//                  alert('Your number is even!');
-//             } else if (num % 2 !== 0){
-//                 alert('Your number is odd!');
-//             }else {
-//
-//             }
-//         }
-//         isEvenOrOdd(enteredNumber);
+        if (!isNaN(enteredNumber)) {
+            isEvenOrOdd(enteredNumber);
+            numberPlusOneHundred(enteredNumber);
+            isNegativeOrPositive(enteredNumber);
+        } else {
+            isNotANumber(enteredNumber);
+        }
 
-//- what the number plus 100 is
-//         function numberPlusOneHundred (input) {
-//             alert('Your number + 100 is: ' + (input + 100));
-//         }
-//         numberPlusOneHundred(enteredNumber);
-// //- if the number is negative or positive
-//         function isNegativeOrPositive(input) {
-//             if (input < 0) {
-//                 alert('Your number is NEGATIVE!');
-//             } else if (input > 0) {
-//                 alert('Your number is POSITIVE!');
-//             }
-//         }
-//         isNegativeOrPositive(enteredNumber);
+        // if (isNaN(enteredNumber)) {
+        //     isNotANumber(enteredNumber);
+        // } else {
+        //     isEvenOrOdd(enteredNumber);
+        //     numberPlusOneHundred(enteredNumber);
+        //     isNegativeOrPositive(enteredNumber);
+        // }
+
+    function isNotANumber(input) {
+        if (isNaN(input)) {
+            alert('I\'m sorry, that is not a number.');
+        }else {}
+    }
+
+//=========================== New Function
+    function isEvenOrOdd(num) {
+        if (num % 2 === 0) {
+            alert('Your number is even!');
+        } else if (num % 2 !== 0){
+            alert('Your number is odd!');
+        }
+    }
+
+//=========================== New Function
+    function numberPlusOneHundred (input) {
+        alert('Your number + 100 is: ' + (input + 100));
+    }
+
+//=========================== New Function
+    function isNegativeOrPositive(input) {
+        if (input < 0) {
+            alert('Your number is NEGATIVE!');
+        } else if (input > 0) {
+            alert('Your number is POSITIVE!');
+        }
+    }
