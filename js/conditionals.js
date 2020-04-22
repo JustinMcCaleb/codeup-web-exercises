@@ -186,22 +186,14 @@ console.log(calculateTotal(5, 100)); // returns 0
             numberPlusOneHundred(enteredNumber);
             isNegativeOrPositive(enteredNumber);
         } else {
-            isNotANumber(enteredNumber);
+            alert('I\'m sorry, that is not a number.');
         }
 
-        // if (isNaN(enteredNumber)) {
-        //     isNotANumber(enteredNumber);
-        // } else {
-        //     isEvenOrOdd(enteredNumber);
-        //     numberPlusOneHundred(enteredNumber);
-        //     isNegativeOrPositive(enteredNumber);
-        // }
-
-    function isNotANumber(input) {
-        if (isNaN(input)) {
-            alert('I\'m sorry, that is not a number.');
-        }else {}
-    }
+    // function isNotANumber(input) {
+    //     if (isNaN(input)) {
+    //         alert('I\'m sorry, that is not a number.');
+    //     }else {}
+    // }
 
 //=========================== New Function
     function isEvenOrOdd(num) {
