@@ -30,7 +30,6 @@
             return 'That does not match any predefined colors.';
         }
     }
-
     // console.log(analyzeColor('BLUE'));
     // console.log(analyzeColor('cYan'));
     // console.log(analyzeColor('red'));
@@ -71,7 +70,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
         }
     }
 
-    // console.log(analyzeColor(randomColor));
+    console.log(analyzeColor(randomColor));
 
 
 /**
@@ -82,21 +81,21 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
     // var userColorInput = prompt('Type in a color.').toLowerCase();
 
-    function analyzeColor(inputColor) {
-        switch (inputColor) {
-            case 'blue':
-                alert('Blue is the color of my eyes.');
-                break;
-            case 'red':
-                alert('Red is a primary color!');
-                break;
-            case 'cyan':
-                alert('I\'m honestly not sure what cyan looks like.');
-                break;
-            default:
-                alert('That does not match any predefined colors.');
-        }
-    }
+    // function analyzeColor(inputColor) {
+    //     switch (inputColor) {
+    //         case 'blue':
+    //             alert('Blue is the color of my eyes.');
+    //             break;
+    //         case 'red':
+    //             alert('Red is a primary color!');
+    //             break;
+    //         case 'cyan':
+    //             alert('I\'m honestly not sure what cyan looks like.');
+    //             break;
+    //         default:
+    //             alert('That does not match any predefined colors.');
+    //     }
+    // }
     // analyzeColor(userColorInput);
 
 
@@ -148,13 +147,13 @@ console.log(calculateTotal(5, 100)); // returns 0
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-//     var luckyNumber = Math.floor(Math.random() * 6);
-//
-//     var totalBill = parseFloat(prompt('What was your bill total?'));
-//     alert('Congrats! Today your lucky number is ' + luckyNumber);
-//     var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
-//     alert('Thank you for your business, your total today before the discount is $' + totalBill);
-//     alert('Your total after the discount is applied is $' + priceAfterDiscount);
+    var luckyNumber = Math.floor(Math.random() * 6);
+
+    var totalBill = parseFloat(prompt('What was your bill total?'));
+    alert('Congrats! Today your lucky number is ' + luckyNumber);
+    var priceAfterDiscount = calculateTotal(luckyNumber, totalBill);
+    alert('Thank you for your business, your total today before the discount is $' + totalBill);
+    alert('Your total after the discount is applied is $' + priceAfterDiscount);
 
 
 
