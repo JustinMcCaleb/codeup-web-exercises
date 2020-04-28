@@ -32,7 +32,7 @@
 // 7777777
 // 88888888
 // 999999999
-
+    // Used a Smarandache Sequence in the console.log - https://mathworld.wolfram.com/SmarandacheSequences.html
     for (var k = 1; k < 10; k++) {
         console.log((k * (Math.pow(10, k) - 1)) / 9);
     }
