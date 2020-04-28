@@ -22,19 +22,19 @@
         }
     }
 
-//Create a for loop that uses console.log to create the output shown below.
-//1
-//22
-//333
-//4444
-//55555
-//666666
-//7777777
-//88888888
-//999999999
+// Create a for loop that uses console.log to create the output shown below.
+// 1
+// 22
+// 333
+// 4444
+// 55555
+// 666666
+// 7777777
+// 88888888
+// 999999999
 
     for (var k = 1; k < 10; k++) {
-        console.log('====== NOT COMPLETE ======')
+        for (var l = 1; l <= k; l++) console.log(k);
     }
 
 // Create a for loop that uses console.log to create the output shown below
@@ -58,8 +58,8 @@
 // 15
 // 10
 // 5
-    for (var l = 100; l >= 5; l -= 5) {
-        console.log(l);
+    for (var m = 100; m >= 5; m -= 5) {
+        console.log(m);
     }
 
 
