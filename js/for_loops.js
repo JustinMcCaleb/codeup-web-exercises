@@ -34,7 +34,7 @@
 // 999999999
 
     for (var k = 1; k < 10; k++) {
-        for (var l = 1; l <= k; l++) console.log(k);
+        console.log((k * (Math.pow(10, k) - 1)) / 9);
     }
 
 // Create a for loop that uses console.log to create the output shown below
