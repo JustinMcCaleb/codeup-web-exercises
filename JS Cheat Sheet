@@ -41,6 +41,22 @@
 
     use the
 
+=== Loops ===
+
+    while loop - great for iterating until a condition is met
+    do-while - great for iterating until a condition is met
+    for loop - great for doing something n times
+    break - great for stopping iteration when some condition is met
+    continue - great for skipping certain code per iteration when a condition is met
+
+    While loop syntax:
+
+        while(conditionIsTrue) {
+            do something...
+        }
+
+        Used to repeat a block of code until condition changes to break the loop. Likely used when the number of iterations is unknown.
+
 
 .toFixed(2) - returns w/ 2 decimal points
 
