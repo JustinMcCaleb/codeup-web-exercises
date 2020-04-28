@@ -36,7 +36,7 @@
 
 
     function isBetweenOneAndFifty(num) {
-        return num > 1 && num < 50;
+        return num >= 1 && num < 50;
     }
     isBetweenOneAndFifty();
 
@@ -47,4 +47,14 @@
         }
     }
 
+    console.log('Number to skip is: ' + m);
 
+    for (var i = 0; i < 50; i++) {
+        if (i % 2 === 0) {
+            continue;
+        } else if (i === parseFloat(m)) {
+            console.log('Yikes! Skipping number: ' + m);
+            continue;
+        }
+        console.log('Here is an odd number: ' + i);
+    }
