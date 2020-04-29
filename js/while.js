@@ -52,13 +52,4 @@
         allCones -= customerAmount;
     } while (allCones > -5);
 
-
-            // if (allCones > customerAmount) {
-            //     console.log(customerAmount + ' cones sold!');
-            // } else if (allCones <= 0) {
-            //     console.log('Yay! I sold them all!');
-            // }else if (customerAmount > allCones) {
-            //     console.log('Cannot sell you ' + customerAmount + ' I only have ' + allCones + '.');
-            // }
-
 })();
