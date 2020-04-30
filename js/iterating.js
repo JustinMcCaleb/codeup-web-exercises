@@ -67,6 +67,8 @@
      */
         var oneThroughFive = [1,2,3,4,5];
 
+        //Need to use return in function, then console.log the called function with oneThroughFive as an argument
+
         function firstIndex(arr) {
             console.log(arr[0]);
         }
