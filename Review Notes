@@ -1,0 +1,49 @@
+"use strict";
+
+    // function returnName() {
+    //     return "Justin";
+    // }
+
+    // function returnGreeting() {
+    //     return "Hello " + returnName();
+    // }
+    //
+    // function returnGreeting(callback) {
+    //     return "Hello " + callback();
+    // }
+    //
+
+    // var someArray = [1, 2, 3];
+    //
+    // function logEachElement(element) {
+    //     console.log(element);
+    // }
+    //
+    // // using named function
+    // someArray.forEach(logEachElement);
+    //
+    // // using anonymous function
+    // someArray.forEach(function(element) {
+    //     console.log(element);
+    // });
+
+
+    // function add(num1, num2) {
+    //     return num1 + num2;
+    // }
+    //
+    // function concatNums(num1, num2) {
+    //     return "" + num1 + num2;
+    // }
+    //
+    // function multiply(num1, num2) {
+    //     return num1 * num2;
+    // }
+    //
+    // function doMath(callback, num1, num2) {
+    //     return callback(num1, num2);
+    // }
+
+    // console.log(doMath(add, 2, 2));
+
+    // console.log(doMath(concatNums, 2, 2));
