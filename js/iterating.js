@@ -14,7 +14,7 @@
      * array.
      */
 
-    console.log(names.length);
+        console.log(names.length);
 
     /**
      * TODO:
@@ -22,10 +22,10 @@
      * accessing each element's index.
      */
 
-    console.log(names[0]);
-    console.log(names[1]);
-    console.log(names[2]);
-    console.log(names[3]);
+        console.log(names[0]);
+        console.log(names[1]);
+        console.log(names[2]);
+        console.log(names[3]);
 
     /**
      * TODO:
@@ -33,27 +33,24 @@
      * array.
      */
 
-    for(var i = 0; i < names.length; i++) {
-        console.log(names[i]);
-    }
-// function forLoop() {
-//     for(var z = 0; names.length < z; z++) {
-//         var output = '';
-//         output += names[z];
-//         return output;
-//     }
-//
-//     }
-//     console.log(forLoop());
+        function forLoop() {
+            var output = '';
+            for(var z = 0; z < names.length; z++) {
+                output += names[z];
+                output += '\n';
+            }
+            return output;
+            }
+            console.log(forLoop());
 
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
 
-    names.forEach(function(name){
-        console.log(name);
-    });
+        names.forEach(function(name){
+            console.log(name);
+        });
 
     /**
      * TODO:
@@ -68,20 +65,20 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    var oneThroughFive = [1,2,3,4,5];
+        var oneThroughFive = [1,2,3,4,5];
 
-    function firstIndex(arr) {
-        console.log(arr[0]);
-    }
-    firstIndex(oneThroughFive);
+        function firstIndex(arr) {
+            console.log(arr[0]);
+        }
+        firstIndex(oneThroughFive);
 
-    function secondIndex(arr) {
-        console.log(arr[1]);
-    }
-    secondIndex(oneThroughFive);
+        function secondIndex(arr) {
+            console.log(arr[1]);
+        }
+        secondIndex(oneThroughFive);
 
-    function thirdIndex(arr) {
-        console.log(arr[arr.length - 1]);
-    }
-    thirdIndex(oneThroughFive);
+        function lastIndex(arr) {
+            console.log(arr[arr.length - 1]);
+        }
+        lastIndex(oneThroughFive);
 })();
