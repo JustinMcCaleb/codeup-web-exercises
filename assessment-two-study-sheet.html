@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assessment Two Study Sheet</title>
+        <style>
+            body {
+                background-color: #3b3f41;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+/*
+            - For-Each Loop: takes in a function as a parameter and does NOT return a value.
+
+            - The callback function passed to a .forEach loop takes in UP TO 3 parameters that will provide access to the array element, the corresponding index, and the array itself.
+
+            - We can omit parameters that we don't intend to use (like index and array)
+
+            someArray.forEach(function(element, index, array) {
+                // ...
+            })
+ */
+            var shapes = ['square', 'rectangle', 'circle', 'triangle'];
+
+            // loop through the array and log the values
+            shapes.forEach(function(shape) {
+                console.log('Here is a lovely shape: ' + shape + '.');
+            });
+
+        // ================================= LOOPS AND ARRAY BONUSES
+        // 1. Create a function that returns a random day of the week
+
+                var dayOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+                function randomDayOfWeek() {
+                    //returns a random number between 0 - 6.
+                    var randomNum = Math.floor(Math.random() * 7);
+                    return dayOfWeek[randomNum];
+                }
+
+                console.log('Your random day of the week is... ' + randomDayOfWeek());
+
+
+        // 2. Create a function that takes a single letter and returns what number the letter is in the alphabet. Ignore case.
+        // someFunction("a") // returns 1
+        // someFunction("z") // returns 26
+
+                var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+                function whatNumberInAlphabet(letter) {
+                    return alphabet.indexOf(letter) + 1;
+                }
+                console.log(whatNumberInAlphabet('z'), 'Correct answer is... ' + 26);
+                console.log(whatNumberInAlphabet('j'), 'Correct answer is... ' + 10);
+                console.log(whatNumberInAlphabet('q'), 'Correct answer is... ' + 17);
+                console.log(whatNumberInAlphabet('a'), 'Correct answer is... ' + 1);
+
+
+
+        // 3. Create a function that returns the longest string in a given array of string elements.
+
+
+
+
+        // 4. Create a function that takes in two arrays of elements, including numbers. If all numbers added together in the first array are equal to all the number inputs added in the second array, return true, otherwise, false. Only add together numeric elements but either array may contain non-numeric elements.
+        //     var arr1 = ['bob', 1, true, 1, 2];
+        // var arr2 = [2, null, undefined, 0, 2, "apple"]
+        // exampleFunction(arr1, arr2) // returns true
+        // 5. Write a program to toggle the case for all characters in a string. Special characters will not change.
+        //     Example input: "aBc12#""
+        // Example output: "AbC12#"
+        // 6. Write a program that takes a given string appended with a number at the end. The program will check the length of the string to verify the string is equal to the number appended. If the number appended equals the string length, output "Yes". if the number appended does not equal the string length, output "No".
+        //     Example Input: "geek5"
+        // Example Output: "Yes"
+        // Example Input: "codingchallenge25"
+        // Example Output: "No"
+        // 7. Create a student roster management app. Using the user dialogue functions (alert, confirm, prompt), create an application that will prompt the user to choose from a menu with the following actions:
+        //     1) add a student
+        // 2) delete a student
+        // 3) view all students in alphabetical order
+        // 4) view all students in reverse alphabetical
+
+
+
+
+        </script>
+    </body>
+</html>
