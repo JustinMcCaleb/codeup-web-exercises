@@ -51,11 +51,31 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+        var shoppers = [
+            {
+                name: 'Cameron',
+                amount: 180
+            },
+            {
+                name: 'Ryan',
+                amount: 250
+            },
+            {
+                name: 'George',
+                amount: 320
+            }
+        ];
+
+        //console log needs to display the persons name, the amount before discount, the discount, and the amount after the discount (if applicable)
+        shoppers.forEach(function (shopper) {
+            if (shopper.amount >= 200) {
+                var discount = shopper.amount * .12;
+                var amountAfterDiscount = shopper.amount - discount;
+                console.log(shopper.name + ', your total before the discount is $' + shopper.amount + ', and your total discount is $' + discount + ', which brings your new total after discount to: $' + amountAfterDiscount);
+            } else {
+                console.log(shopper.name + ', thank your for shopping with us today. Your total comes out to $' + shopper.amount);
+            }
+        });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -69,6 +89,8 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+
 
     /**
      * TODO:
