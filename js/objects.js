@@ -1,6 +1,7 @@
 (function() {
     "use strict";
 
+
     /**
      * TODO:
      * Create an object with firstName and lastName properties that are strings
@@ -12,6 +13,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
+        var person = {
+            firstName: 'Justin',
+            lastName: 'McCaleb',
+        };
+
+        console.log(person.firstName);
+        console.log(person.lastName);
+
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -21,6 +30,12 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+
+        person.sayHello = function() {
+            return ('Yoooooo, ' + person.firstName + ' ' + person.lastName + '!' + ' How\'s life?')
+        };
+
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
