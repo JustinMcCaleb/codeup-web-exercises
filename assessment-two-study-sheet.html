@@ -85,42 +85,78 @@
 
             //Write a function that uses a ternary operator to console.log whether a number is even or odd
 
-                function isEvenOrOdd(num) {
-                    //checking to see if the passed in number is even or odd
-                    return (num % 2 === 0) ? 'Is Even' : 'Is Odd';
-                }
-
-                console.log(isEvenOrOdd(-400901));
-                console.log(isEvenOrOdd(666));
+                // function isEvenOrOdd(num) {
+                //     //checking to see if the passed in number is even or odd
+                //     return (num % 2 === 0) ? 'Is Even' : 'Is Odd';
+                // }
+                //
+                // console.log(isEvenOrOdd(-400901));
+                // console.log(isEvenOrOdd(666));
 
             //Use a switch statement
 
                 //returns a random number between 0 - 5.
-                var randomNum2 = Math.floor(Math.random() * 5);
+//                 var randomNum2 = Math.floor(Math.random() * 5);
+// //
+//             switch(randomNum2) {
+//                 case (0):
+//                     console.log('Congrats, 0 is right!');
+//                     break;
+//                 case (1):
+//                     console.log('Congrats, 1 is right!');
+//                     break;
+//                 case (2):
+//                     console.log('Congrats, 2 is right!');
+//                     break;
+//                 case (3):
+//                     console.log('Congrats, 3 is right!');
+//                     break;
+//                 case (4):
+//                     console.log('Congrats, 4 is right!');
+//                     break;
+//                 case (5):
+//                     console.log('Congrats, 5 is right!');
+//                     break;
+//             }
+
+
+            //Write a function that takes an index of an array of numbers and returns whether that number is above or below 25.
+
+                var array1 = [1,456,23,45,-23,78,26];
+
+                function isArrayNumAboveOrBelow25(arr) {
+                    // returns a random number between 0 - 6.
+                var randomNum = Math.floor(Math.random() * 7);
+
+                if(array1[randomNum] < 25) {
+                    return 'Your number, ' + array1[randomNum] + ' is BELOW 25.'
+                }else {
+                    return 'Your number, ' + array1[randomNum] + ' is ABOVE 25.'
+                }
+                }
+
+                console.log(isArrayNumAboveOrBelow25(array1));
+
+// Write a function that prints the numbers from 1 to 100
+// For numbers divisible by 3, print “Fizz”
+// For numbers divisible by 5, print “Buzz”
+// For numbers divisible by both 3 and 5, print “FizzBuzz”
+
+//             function fizzBuzz() {
+//                 for(var i = 1; i <=100; i++) {
+//                     if ((i % 3 === 0) && (i % 5 === 0)) {
+//                         console.log('FizzBuzz');
+//                     }else if (i % 5 === 0) {
+//                         console.log('Buzz');
+//                     }else if (i % 3 === 0) {
+//                         console.log('Fizz');
+//                     }else {
+//                         console.log(i);
+//                     }
+//                 }
+//             }
 //
-            switch(randomNum2) {
-                case (0):
-                    console.log('Congrats, 0 is right!');
-                    break;
-                case (1):
-                    console.log('Congrats, 1 is right!');
-                    break;
-                case (2):
-                    console.log('Congrats, 2 is right!');
-                    break;
-                case (3):
-                    console.log('Congrats, 3 is right!');
-                    break;
-                case (4):
-                    console.log('Congrats, 4 is right!');
-                    break;
-                case (5):
-                    console.log('Congrats, 5 is right!');
-                    break;
-            }
-
-
-
+// fizzBuzz();
 
         </script>
     </body>

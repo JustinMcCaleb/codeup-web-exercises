@@ -58,6 +58,12 @@
         Used to repeat a block of code until condition changes to break the loop. Likely used when the number of iterations is unknown.
 
 
+=== Objects ===
+
+    Two types of data that can be set to an object;
+        - properties: data set to an object
+        - methods
+
 .toFixed(2) - returns w/ 2 decimal points
 
 //Define a function named isTrue that takes in any input and returns true if the input provided is exactly equal to true in value and data type.
