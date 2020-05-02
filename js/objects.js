@@ -90,7 +90,47 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
+        var books = [
+                    {
+                       title: 'The Alchemist',
+                        author: {
+                                firstName: 'Paulo',
+                                lastName: 'Coelho',
+                                },
+                    },
+                    {
+                        title: 'Why We Sleep',
+                        author: {
+                            firstName: 'Matthew',
+                            lastName: 'Walker',
+                        },
+                    },
+                    {
+                        title: '1984',
+                        author: {
+                            firstName: 'George',
+                            lastName: 'Orwell',
+                        },
+                    },
+                    {
+                        title: 'Rant: The Oral Biography of Buster Casey',
+                        author: {
+                            firstName: 'Chuck',
+                            lastName: 'Palahniuk',
+                        },
+                    },
+                    {
+                        title: 'Outliers',
+                        author: {
+                            firstName: 'Malcolm',
+                            lastName: 'Gladwell',
+                        },
+                    },
+            ];
 
+    console.log(books[2].title);
+    console.log(books[2].author.firstName + ' ' + books[2].author.lastName);
+    console.log(books[books.length - 1].title);
 
     /**
      * TODO:
@@ -116,6 +156,29 @@
      *      ---
      *      ...
      */
+
+        function booksArrayLoop() {
+            //Initializing the variable w/ an empty string to hold the book info returned from the forEach loop.
+            var bookInfo = '';
+
+            //For loop to get the index of the book in the array.
+            // for (var i = 0; i < books.length; i++) {
+            //     bookInfo += 'Book # ' + (i + 1) + '\n';
+            //     bookInfo += 'Title: ' + books[i].title + '\n';
+            //     bookInfo += 'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName + '\n';
+            //     bookInfo += '---' + '\n';
+            // }
+
+            // forEach loop to do the same. I think this is cleaner in this situation.
+            books.forEach(function (book, index) {
+                bookInfo += 'Book # ' + (index + 1) + '\n';
+                bookInfo += book.title + '\n';
+                bookInfo += book.author.firstName + ' ' + book.author.lastName + '\n';
+                bookInfo += '---' + '\n';
+            });
+            return bookInfo;
+        }
+        console.log(booksArrayLoop());
 
     /**
      * Bonus:
