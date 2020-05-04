@@ -1,6 +1,6 @@
 ============ JavaScript Cheat Sheet ============
 
-==== Data Types ====
+====== Data Types ======
 
     Primitive
         -boolean    // true/false
@@ -16,7 +16,7 @@
         -function
         -array
 
-==== Operators ====
+====== Operators ======
 
     -Operators are special symbols in the language that produce a value from the operands they operate on. Combined with primitive types, we can produce expressions.
 
@@ -27,7 +27,7 @@
     typeof // is a special operator that will produce a STRING that contains the type of the operand it is used on.
         typeof 42 // will result in the STRING 'number'
 
-=== Arithmetic Operators ===
+===== Arithmetic Operators =====
 
     remember PEMDAS
 
@@ -37,11 +37,11 @@
     / // division
     % // produces a remainder after dividing two numbers
 
-=== String Concatenation ===
+===== String Concatenation =====
 
     use the
 
-=== Loops ===
+===== Loops =====
 
     while loop - great for iterating until a condition is met
     do-while - great for iterating until a condition is met
@@ -58,11 +58,59 @@
         Used to repeat a block of code until condition changes to break the loop. Likely used when the number of iterations is unknown.
 
 
-=== Objects ===
+===== Objects =====
 
     Two types of data that can be set to an object;
         - properties: data set to an object
         - methods
+
+===== Browser Object Model =====
+
+        - BOM
+        - The BOM allows javascript to interact with the web browser
+
+    ===== Window Object =====
+
+            - the core of the Browser Object Model
+            - the window object represents the JavaScript Global object, that means that any variables or functions declared in the global scope become part of the window object
+
+    ===== System Dialogs =====
+
+        - alert(), confirm(), and prompt() are provided by the browser and are made available through the window object. Since the window object represents the global JS object, the methods can be called without mentioning the window object.
+
+    ===== Intervals and Timeouts =====
+
+        - setInterval()
+            - allows code to be executed at a specified time interval. The code will continue executing at the given interval until the method clearInterval() is called.
+
+            'use strict';
+
+            // this code will produce a console log every second
+            // when count >= max, the interval is cancelled, and the logging will stop
+
+            var count = 0;
+            var max = 10;
+            var interval = 1000; // interval time in milliseconds
+
+            var intervalId = setInterval(function () {
+                if (count >= max) {
+                    clearInterval(intervalId);
+                    console.log('All done');
+                } else {
+                    count++;
+                    console.log('Repeating this line ' + count);
+                }
+            }, interval);
+
+
+
+
+
+
+
+
+
+
 
 .toFixed(2) - returns w/ 2 decimal points
 
