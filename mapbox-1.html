@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapBox Mini Exercise 1</title>
+
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body {
+            background-color: #3b3f41;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #map {
+            height: 600px;
+            width: 700px;
+            border: 5px solid black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<!--Mini - Exercise 1 (after customizing map)-->
+<!--Create an HTML file called mapbox-1.html-->
+<!--In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style.-->
+<h1>Utopia, TX</h1>
+<div id='map'></div>
+
+<script src="js/keys.js"></script>
+<script>
+    mapboxgl.accessToken = mapboxKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-99.526743, 29.615229],
+    });
+
+
+    setTimeout(function () {
+        map.setZoom(3);
+        map.setCenter([-95.7129, 37.0902]);
+        map.setStyle('mapbox://styles/mapbox/satellite-v9');
+        var marker = new mapboxgl.Marker()
+        .setLngLat([-99.526743, 29.615229])
+        .addTo(map);
+    }, 5000);
+</script>
+
+
+</body>
+</html>
