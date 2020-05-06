@@ -45,8 +45,21 @@
         mapboxgl.accessToken = mapboxKey;
         var map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9'
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 12,
+            center: [-77.0369 , 38.9070],
         });
+
+
+        var lincolnPopup = new mapboxgl.Popup()
+            .setHTML('<p>Lincoln Memorial</p>');
+
+        // dcMarker
+        var dcMarker = new mapboxgl.Marker()
+            .setLngLat([-77.050636, 38.889248])
+            .addTo(map)
+            .setPopup(lincolnPopup);
+
     </script>
 
 

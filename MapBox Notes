@@ -31,4 +31,13 @@
        * - AVOID PUTTING API KEYS ON GITHUB - *
             - Create a separate JS file to store a var with the API key assigned, then add script tag and link new JS file to HTML, and ADD that file to .gitignore. DO NOT use a IIFE in JS file.
 
-    6.
+    6. Geo-Coding
+
+        - add 'background' code into a separate js file, then link with script tag
+        - then you can call the function defined in linked JS file with appropriate added code
+        //example of code in HTML file
+            geocode('address', API-TOKEN-KEY-VAR).then(function(result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(20);
+            });
