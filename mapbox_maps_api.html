@@ -28,26 +28,80 @@
     <body>
 
         <div id='map'></div>
+
         <script src="js/keys.js"></script>
         <script src="js/mapbox-geocoder-utils.js"></script>
+
         <script>
             'use strict';
+
+
 
             mapboxgl.accessToken = mapboxKey;
             var map = new mapboxgl.Map({
                 container: 'map',
                 style: 'mapbox://styles/mapbox/streets-v9',
-                zoom: 12
+                zoom: 9.5
             });
 
-            geocode("Utopia, Texas", mapboxKey).then(function(result) {
-                  map
+            geocode("San Antonio, Texas", mapboxKey).then(function(result) {
+                map
                     .setCenter(result);
+            });
 
-                var marker = new mapboxgl.Marker()
-                    .setLngLat([-99.526809, 29.615917])
-                    .addTo(map);
-              });
+            //used to get lat long of restaurants
+                // geocode("", mapboxKey).then(function(result) {
+                //     console.log(result)
+                // });
+
+            var restaurantInfo = [
+                {
+                    name: 'Taco Blvd',
+                    favDish: 'Asada Taco',
+                    description: '<strong>Taco Blvd</strong><p><a href="https://www.yelp.com/biz/taco-blvd-san-antonio" target="_blank">Taco Blvd</a> is a great place to grab a delicious taco.</p>',
+                },
+                {
+                    name: 'What-a-burger',
+                    favDish: 'Bacon Cheeseburger',
+                    description: '<strong>What-a-burger</strong><p><a href="https://whataburger.com/home" target="_blank">What-a-burger</a> is ol faithful.</p>',
+                },
+                {
+                    name: 'Hot Joy',
+                    favDish: 'Twice Fried Chicken Wings',
+                    description: '<strong>Hot Joy</strong><p><a href="http://www.hotjoysa.com/" target="_blank">Hot Joy</a> is located downtown. Great food and beer.</p>',
+                },
+            ];
+
+            restaurantInfo.forEach(function (restaurant, index, array) {
+
+        // popup and marker one
+            var popupOne = new mapboxgl.Popup()
+                .setHTML(restaurantInfo[0].description);
+
+            var markerOne = new mapboxgl.Marker()
+                .setLngLat([-98.506801, 29.611168])
+                .addTo(map)
+                .setPopup(popupOne);
+
+        // popup and marker two
+            var popupTwo = new mapboxgl.Popup()
+                .setHTML(restaurantInfo[1].description);
+
+            var markerTwo = new mapboxgl.Marker()
+                .setLngLat([-98.592424, 29.563791])
+                .addTo(map)
+                .setPopup(popupTwo);
+
+        // popup and marker three
+            var popupThree = new mapboxgl.Popup()
+                .setHTML(restaurantInfo[2].description);
+
+            var markerThree = new mapboxgl.Marker()
+                .setLngLat([-98.490886, 29.413627])
+                .addTo(map)
+                .setPopup(popupThree);
+            });
+
         </script>
 
     </body>
