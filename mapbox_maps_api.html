@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mapbox Exercise</title>
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+        <style>
+            body {
+                background-color: #3b3f41;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #map {
+                height: 600px;
+                width: 700px;
+                border: 5px solid black;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+        <div id='map'></div>
+        <script src="js/keys.js"></script>
+        <script src="js/mapbox-geocoder-utils.js"></script>
+        <script>
+            'use strict';
+
+            mapboxgl.accessToken = mapboxKey;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 12
+            });
+
+            geocode("Utopia, Texas", mapboxKey).then(function(result) {
+                  map
+                    .setCenter(result);
+
+                var marker = new mapboxgl.Marker()
+                    .setLngLat([-99.526809, 29.615917])
+                    .addTo(map);
+              });
+        </script>
+
+    </body>
+</html>
