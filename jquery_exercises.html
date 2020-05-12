@@ -3,12 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>jquery_exercises</title>
+        <style>
+            body {
+                background-color: #3b3f41;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid black;
+                width: 10em;
+                height: 10em;
+            }
+        </style>
     </head>
     <body>
 
+        <div>
+            <h1>jQuery</h1>
+        </div>
 
-    <script src="js/jquery-2.2.4.js"></script>
-    <script>
+
+    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+    <script type="text/javascript">
+        'use strict';
         $(document).ready(function() {
             alert( 'The DOM has finished loading!' );
         });
