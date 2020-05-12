@@ -62,9 +62,13 @@
            // alert(contents);
 
         //jQuery Selectors exercise 'Class Selectors'
-            $('.codeup').css('border', '1px solid red')
+        //     $('.codeup').css('border', '1px solid red');
 
-
+        //jQuery Selectors exercise 'Element Selectors'
+            $('li').css('font-size', '20px');
+            $('h1, p, li').css('background-color', '#fdff9d');
+            var h1content = $('h1').html();
+            alert(h1content);
         });
 
 
