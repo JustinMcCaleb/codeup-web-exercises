@@ -65,10 +65,29 @@
         //     $('.codeup').css('border', '1px solid red');
 
         //jQuery Selectors exercise 'Element Selectors'
-            $('li').css('font-size', '20px');
-            $('h1, p, li').css('background-color', '#fdff9d');
-            var h1content = $('h1').html();
-            alert(h1content);
+        //     $('li').css('font-size', '20px');
+        //     $('h1, p, li').css('background-color', '#6dfaff');
+        //     var h1content = $('h1').html();
+        //     alert(h1content);
+
+        //jQuery Mouse Events Exercise
+            $('h1').click(function() {
+                $(this).css('background-color', '#6dfaff')
+            });
+
+            $('p').dblclick(function() {
+                $(this).css('font-size', '18px')
+            });
+
+            $('li').hover(
+                function() {
+                    $(this).css('color', 'red');
+                },
+                function() {
+                    $(this).css('color', 'black');
+                }
+            );
+
         });
 
 
