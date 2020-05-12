@@ -105,7 +105,15 @@
 
 ====== jQuery ======
 
+        - JS library that simplifies DOM manipulation
+        - For class we will use version 2
+        - In jQuery, we commonly use the dollar sign $ to access the library
+        - $ this symbol is used to reference the jQuery library
 
+        -Document ready
+            - $(document).ready(function() {
+                alert('The DOM has finished loading');
+            });
 
 
 

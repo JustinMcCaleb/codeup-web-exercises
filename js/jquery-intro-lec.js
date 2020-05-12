@@ -36,7 +36,7 @@
 
 window.onload = function() {
 	alert( 'The page has finished loading!' );
-}
+};
 
 // jQuery version: This will fire before the images are loaded
 // We use jQuery to select the document
@@ -61,4 +61,6 @@ $(document).ready(function() {
 
 	// INSERT JAVASCRIPT CODE HERE
 
+	var headings = $('.main-headings');
+	console.log(headings);
 });
