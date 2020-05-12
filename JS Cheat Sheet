@@ -115,6 +115,13 @@
                 alert('The DOM has finished loading');
             });
 
+        - Selectors
+
+            //Selects all elements with the class of .main-headings, and the element with the id of books
+            - $('.main-headings, #books')
+
+            - $('#book-welcome').html();
+                - will return the inner HTML of the element with an ID of book-welcome
 
 
 

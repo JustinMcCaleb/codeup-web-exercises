@@ -14,33 +14,63 @@
 
             div {
                 display: flex;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                border: 3px solid black;
+                width: 20em;
+                height: 20em;
             }
 
             h1 {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border: 3px solid black;
-                width: 10em;
-                height: 10em;
+                /*border: 3px solid black;*/
+                /*width: 10em;*/
+                /*height: 10em;*/
             }
         </style>
     </head>
     <body>
 
-        <div>
-            <h1>jQuery</h1>
+        <div class="codeup" id="containerDiv">
+            <h1 class="containerHeader" id="mainHeader">jQuery</h1>
+            <p class="codeup" id="paragraphText">jQuery info here.</p>
+            <ul class="containerUnorderedList" id="unorderedList">
+                <li class="containerListItem" id="listItemOne">One</li>
+                <li class="containerListItem" id="listItemTwo">Two</li>
+                <li class="containerListItem" id="listItemThree">Three</li>
+            </ul>
         </div>
 
 
     <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
     <script type="text/javascript">
         'use strict';
+
+        //using an IIFE with jQuery
+        (function($) {
         $(document).ready(function() {
-            alert( 'The DOM has finished loading!' );
+            // all JS goes inside here
+
+        //jQuery Selectors exercise 'ID Selectors' part
+           //  alert( 'The DOM has finished loading!' );
+           //
+           // var contents = $('#listItemTwo').html();
+           //
+           // alert(contents);
+
+        //jQuery Selectors exercise 'Class Selectors'
+            $('.codeup').css('border', '1px solid red')
+
+
         });
+
+
+
+
+        })(jQuery);
     </script>
     </body>
 </html>
