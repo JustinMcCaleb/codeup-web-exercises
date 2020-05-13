@@ -123,6 +123,33 @@
             - $('#book-welcome').html();
                 - will return the inner HTML of the element with an ID of book-welcome
 
+        - Mouse Events
+
+        - Keyboard Events
+
+            - .keydown() : Binds an event handler to the 'keydown' JavaScript event or trigger that event on an element.
+
+                $( 'selector' ).keydown( handler function )
+
+            - .keypress() : Binds an event handler to the 'keypress' JavaScript event or trigger that event on an element.
+
+                - works the same as .keydown() BUT, modifier keys (shift, control, escape, etc) will NOT trigger a .keydown() event.
+
+                $( 'selector' ).keypress( handler function)
+
+            - .keyup() : Binds an event handler to the 'keyup' JavaScript event or trigger that event on an element.
+
+                $( 'selector' ).keyup( handler function )
+
+            - .on() : All the jQuery events we have covered so far can also be listened to using the .on() method. This method takes the event listener type and a callback function
+
+                - the .on() can have multiple arguments which
+                * - allows you to use an event on a dynamically added (something added to the document AFTER page load) element.
+
+                .on('keydown', function() {});
+
+            - .off() : the .
+
 
 
 
