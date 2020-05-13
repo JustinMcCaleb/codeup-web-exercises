@@ -2,25 +2,39 @@
 <html lang="en">
     <head>
         <title>Konami Code</title>
+        <link rel="stylesheet" href="css/tree.css">
     </head>
     <body>
-    <h1>Konami Code</h1>
+    <header class="sky">
+        <div class="sun"></div>
+        <div class="cloud-1"></div>
+        <div class="cloud-2"></div>
+    </header>
+    <main class="mother-nature">
+        <div class="tree">
+            <div class="leaves"></div>
+            <div class="trunk">
+                <div class="tree-knot"></div>
+            </div>
+        </div>
+    </main>
+    <footer class="earth"></footer>
 
     <script src="js/jquery-2.2.4.js"></script>
     <script>
         "use strict";
 
-        var array = [1, 2, 3];
-
         var bucket = [];
         let lastKeyTime = Date.now();
+        console.log(lastKeyTime);
 
+        //could not figure out how to compare the bucket object with this one
         var konamiCode = ['arrowup', 'arrowdown', 'arrowleft', 'arrowright', 'b', 'a', 'enter'];
 
         $(document).keydown(function(event){
-            // console.log(event.key);
 
             const currentTime = Date.now();
+            console.log(lastKeyTime);
 
             if (currentTime - lastKeyTime > 2000) {
                 bucket = [];
@@ -58,7 +72,9 @@
                 &&
                 bucket[10] === 'enter'
             ) {
-                alert('finally');
+                $('.sky, .mother-nature').css('background-color', 'black');
+                $('.sun').css('background-color', 'white');
+                $('.cloud-1, .cloud-2').css('background-color', 'rgba(255,255,255,0.44)');
             }
         }
 
