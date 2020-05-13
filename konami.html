@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>Konami Code</title>
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/tree.css">
     </head>
     <body>
@@ -11,12 +12,24 @@
         <div class="cloud-2"></div>
     </header>
     <main class="mother-nature">
+        <div class="key">
+            <ul>
+                <li class="listOne">UP x2 </li>
+                <li>DOWN x2</li>
+                <li>LEFT x2</li>
+                <li>RIGHT x2</li>
+                <li>b</li>
+                <li>a</li>
+                <li>return</li>
+            </ul>
+        </div>
         <div class="tree">
             <div class="leaves"></div>
             <div class="trunk">
                 <div class="tree-knot"></div>
             </div>
         </div>
+        <div></div>
     </main>
     <footer class="earth"></footer>
 
@@ -34,7 +47,7 @@
         $(document).keydown(function(event){
 
             const currentTime = Date.now();
-            console.log(lastKeyTime);
+            console.log(currentTime);
 
             if (currentTime - lastKeyTime > 2000) {
                 bucket = [];
@@ -75,6 +88,8 @@
                 $('.sky, .mother-nature').css('background-color', 'black');
                 $('.sun').css('background-color', 'white');
                 $('.cloud-1, .cloud-2').css('background-color', 'rgba(255,255,255,0.44)');
+                $('ul').css('color', 'black');
+
             }
         }
 

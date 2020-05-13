@@ -7,6 +7,18 @@ body {
     margin: 0;
 }
 
+ul {
+    list-style: none;
+    font-family: 'Russo One', sans-serif;
+    color: #8059ff;
+    transition: color 1s;
+}
+
+li {
+    height: 50px;
+    font-size: 2em;
+}
+
 /*======= SKY =======*/
 
 .sky {
@@ -15,6 +27,7 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: column;
+    transition: background-color 3s;
 }
 
 .cloud-1 {
@@ -23,7 +36,7 @@ body {
     width: 200px;
     margin-left: 200px;
     border-radius: 35px 17px 20px 18px;
-    transition: width 1s, height 1s;
+    transition: width 1s, height 1s, background-color 2s;
 }
 
 .cloud-1:hover {
@@ -38,7 +51,8 @@ body {
     align-self: flex-end;
     margin-right: 300px;
     border-radius: 26px 43px 18px 39px;
-    transition: width 1s, height 1s;
+    transition: width 1s, height 1s, background-color 2s;
+
 }
 
 .cloud-2:hover {
@@ -53,7 +67,8 @@ body {
     border-radius: 50px;
     align-self: flex-end;
     margin: 10px 100px 0 0;
-    transition: width 1s, height 1s;
+    transition: width 1s, height 1s, background-color 2s;
+
 }
 
 .sun:hover {
@@ -67,8 +82,9 @@ body {
     background-color: var(--sky-color);
     height: 60vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-end;
+    transition: background-color 3s;
 }
 
 .tree {
@@ -108,5 +124,10 @@ body {
 .earth {
     height: 5vh;
     background-color: darkgreen;
+}
+
+.key {
+    align-self: flex-start;
+
 }
 
