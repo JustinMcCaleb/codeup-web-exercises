@@ -15,6 +15,10 @@
             button {
                 background-color: #00f0ff;
             }
+
+            .boldText {
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -101,6 +105,11 @@
             $('.bigBend').children().last().toggleClass('highlight');
             $('.grandCanyon').children().last().toggleClass('highlight');
             $('.zion').children().last().toggleClass('highlight');
+        });
+
+        //When any h3 is clicked, the lis underneath it should be bolded. Use font-weight: bold to achieve this.
+        $('h3').click(function() {
+            $(this).next().children().toggleClass('boldText');
         });
 
     });
