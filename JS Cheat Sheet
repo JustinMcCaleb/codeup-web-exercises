@@ -150,6 +150,11 @@
 
             - .off() : the .
 
+            - .append()
+                - just adds an element to the END of a list. It does NOT replace.
+
+            - .prepend()
+                - adds an element to the beginning of parent element.
 
 
 
