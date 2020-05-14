@@ -156,6 +156,29 @@
             - .prepend()
                 - adds an element to the beginning of parent element.
 
+            - .html() — Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+
+            - .css() — Get the value of a style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+
+            - .addClass() — Adds the specified class(es) to each of the set of matched elements.
+
+            - .removeClass() — Remove a single class, multiple classes, or all classes from each element in the set of matched elements.
+
+            - .toggleClass() — Add or remove one or more classes from each element in the set of matched elements, depending on either the class’ presence or the value of the switch argument.
+
+            - .each() — Iterate over a jQuery object, executing a function for each matched element.
+
+            - .first() — Reduce the set of matched elements to the first in the set.
+
+            - .last() — Reduce the set of matched elements to the final one in the set.
+
+            - .parent() — Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+
+            - .children() — Get the children of each element in the set of matched elements, optionally filtered by a selector.
+
+            - .next() — Get the immediately following sibling in the set of matched elements.
+
+
 
 
 
