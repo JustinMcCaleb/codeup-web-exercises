@@ -9,7 +9,7 @@
             }
 
             .highlight {
-                background-color: #00f0ff;
+                background-color: #f9ff68;
             }
 
             button {
@@ -58,7 +58,7 @@
     <button class="buttonTwo">Highlight last list item</button>
 
     <h3>Big Bend</h3>
-    <ul>
+    <ul class="bigBend">
         <li>Big Bend was made a national park on June 20, 1935.</li>
         <li>The lowest elevation found in Big Bend is 1,715 feet at the Rio Grande River.</li>
         <li>The highest elevation found in Big Bend is 7,832 feet on Emory Peak.</li>
@@ -66,7 +66,7 @@
     </ul>
 
     <h3>Grand Canyon National Park</h3>
-    <ul>
+    <ul class="grandCanyon">
         <li>The Grand Canyon creates its own weather.</li>
         <li>No one actually knows how old it is.</li>
         <li>It's not the deepest canyon in the world... or even close.</li>
@@ -74,7 +74,7 @@
     </ul>
 
     <h3>Zion National Park</h3>
-    <ul>
+    <ul class="zion">
         <li>Before becoming a National Park, Zion was a national monument.</li>
         <li>There are plenty of preserved archeological sites in Zion.</li>
         <li> Zion Canyon is continually changing.</li>
@@ -98,7 +98,9 @@
 
         //Create a button that, when clicked, makes the last li in each ul have a yellow background.
         $('.buttonTwo').click(function(){
-        $('ul').children().last().css('background-color', 'yellow');
+            $('.bigBend').children().last().toggleClass('highlight');
+            $('.grandCanyon').children().last().toggleClass('highlight');
+            $('.zion').children().last().toggleClass('highlight');
         });
 
     });
