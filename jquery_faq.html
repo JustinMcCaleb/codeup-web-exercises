@@ -13,6 +13,8 @@
 
     <p>10 National Park Facts:</p>
 
+    <button>Show Answers</button>
+
     <dl>
         <dt>How many employees are in the National Park Service?</dt>
         <dd class="invisible">Permanent, temporary, and seasonal employees: Approximately 20,000. Volunteers: More than 279,000 in 2019</dd>
@@ -46,9 +48,14 @@
     </dl>
 
 
+
     <script src="js/jquery-2.2.4.js"></script>
     <script>
-
+    $(document).ready(function() {
+        $('button').click(function() {
+            $('dd').toggleClass('invisible');
+        });
+    });
     </script>
     </body>
 </html>
