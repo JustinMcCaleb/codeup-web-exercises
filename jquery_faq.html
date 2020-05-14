@@ -11,13 +11,17 @@
             .highlight {
                 background-color: #00f0ff;
             }
+
+            button {
+                background-color: #00f0ff;
+            }
         </style>
     </head>
     <body>
 
     <p>10 National Parks Facts:</p>
 
-    <button>Show Answers</button>
+    <button class="buttonOne">Show Answers</button>
 
     <dl>
         <dt>How many employees are in the National Park Service?</dt>
@@ -51,6 +55,8 @@
         <dd class="invisible">... I hope so.</dd>
     </dl>
 
+    <button class="buttonTwo">Highlight last list item</button>
+
     <h3>Big Bend</h3>
     <ul>
         <li>Big Bend was made a national park on June 20, 1935.</li>
@@ -81,7 +87,7 @@
     <script>
     $(document).ready(function() {
         //toggles class of invisible on dd elements when the button is clicked
-        $('button').click(function() {
+        $('.buttonOne').click(function() {
             $('dd').toggleClass('invisible');
         });
 
