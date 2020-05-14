@@ -7,6 +7,10 @@
             .invisible {
                 visibility: hidden;
             }
+
+            .highlight {
+                background-color: #00f0ff;
+            }
         </style>
     </head>
     <body>
@@ -55,6 +59,11 @@
         //toggles class of invisible on dd elements when the button is clicked
         $('button').click(function() {
             $('dd').toggleClass('invisible');
+        });
+
+        //BONUS: When any of the dt elements is clicked, the element that was clicked should be highlighted.
+        $('dt').click(function() {
+            $(this).toggleClass('highlight');
         });
 
     });
