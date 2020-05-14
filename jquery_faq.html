@@ -96,6 +96,11 @@
             $(this).toggleClass('highlight');
         });
 
+        //Create a button that, when clicked, makes the last li in each ul have a yellow background.
+        $('.buttonTwo').click(function(){
+        $('ul').children().last().css('background-color', 'yellow');
+        });
+
     });
     </script>
     </body>
