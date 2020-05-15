@@ -165,17 +165,31 @@
 
         //May 6 2020
             // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
-            function powerOfFour(num) {
-                if (typeof num !== 'number') {
-                    return false;
-                } else {
-                    return Math.pow(num, 4);
-                }
+            // function powerOfFour(num) {
+            //     if (typeof num !== 'number') {
+            //         return false;
+            //     } else {
+            //         return Math.pow(num, 4);
+            //     }
+            // }
+            // console.log(powerOfFour(4));
+            // console.log(powerOfFour(2));
+            // console.log(powerOfFour('string'));
+            // console.log(powerOfFour(true));
+        
+        //May 15 2020
+        // Write a JavaScript function that takes in a string and returns the number of words in the string. If the function is ever passed an argument that is not a string, return the number 0
+        function numberOfWordsInString(str) {
+            if(typeof str !== 'string') {
+                return 0;
+            }else {
+                return str.split(" ").length;
             }
-            console.log(powerOfFour(4));
-            console.log(powerOfFour(2));
-            console.log(powerOfFour('string'));
-            console.log(powerOfFour(true));
+        }
+
+        console.log(numberOfWordsInString('hello this is a test'), 5);
+        console.log(numberOfWordsInString('if you want it that bad go get it'), 9);
+        console.log(numberOfWordsInString(true), 0);
 
 
     </script>
