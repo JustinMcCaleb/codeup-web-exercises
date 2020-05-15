@@ -37,5 +37,12 @@
         "tool"
     ],
     "price": 35
+}, {
+    "title": "Glue",
+    "quantity": 50,
+    "categories": [
+        "supplies"
+    ],
+    "price": 9
 }
 ]

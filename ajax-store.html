@@ -2,19 +2,24 @@
 <html>
 <head>
     <title>Online Store</title>
-</head>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <style>
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
     table, tr, th, td {
         border: 2px solid black;
     }
 
 </style>
-<body>
+</head>
+
+<body class="d-flex flex-column align-items-center justify-content-center">
 
 <h1>My Tool Store</h1>
-
-<table id="products">
+<form action="">
+<table id="products" class="table">
     <thead>
         <tr>
             <th>Title</th>
@@ -25,9 +30,12 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button class="refresh">Refresh Table</button>
+<button class="refresh" type="submit">Refresh Table</button>
+</form>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <script>
 (function() {
@@ -39,10 +47,15 @@
             for(var i = 0; i < data.length; i += 1) {
                 // TODO: Take the data from inventory.json and append it to the products table
 
-                //HINT: You will want to target #insertProducts for your new HTML elements
-                $('#insertProducts').append('<tr><td>' + data[i].title + '</td>' + '<td>' + data[i].quantity + '</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].categories + '</td>' + '</tr>')
+                $('#insertProducts').append('<tr><td>' + data[i].title + '</td>' + '<td>' + data[i].quantity + '</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].categories + '</td>' + '</tr>');
             }
         });
+
+        //used to refresh ONLY the table with ID #products when button is clicked
+        $('.refresh').click(function(){
+            $('#products').load('ajax-store.html #products')
+        });
+
 })();
 </script>
 
