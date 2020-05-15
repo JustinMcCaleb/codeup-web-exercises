@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+
+<style>
+    table, tr, th, td {
+        border: 2px solid black;
+    }
+
+</style>
+<body>
+
+<h1>My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button class="refresh">Refresh Table</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+
+        $.ajax('data/inventory.json').done(function(data) {
+           //for loop used to loop through the JSON file
+            for(var i = 0; i < data.length; i += 1) {
+                // TODO: Take the data from inventory.json and append it to the products table
+
+                //HINT: You will want to target #insertProducts for your new HTML elements
+                $('#insertProducts').append('<tr><td>' + data[i].title + '</td>' + '<td>' + data[i].quantity + '</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].categories + '</td>' + '</tr>')
+            }
+        });
+})();
+</script>
+
+</body>
+</html>

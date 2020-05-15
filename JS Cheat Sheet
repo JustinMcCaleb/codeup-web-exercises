@@ -200,6 +200,7 @@
             // making an API call using AJAX
             // .done method waits to run the code until the API return the requested info
             //instead of .get() you can use .ajax() that has a default of a GET request.
+
             $.get('url of API here').done(function(info) {
                 //code using info pulled from API here
                 //info parameter is required to access the info from the request
