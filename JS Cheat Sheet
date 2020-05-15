@@ -179,6 +179,52 @@
             - .next() — Get the immediately following sibling in the set of matched elements.
 
 
+        - AJAX
+            - Asynchronous JavaScript and XML
+
+            -AJAX requests will often employ the use of an API, or JSON file and return us information using JavaScript Object Notation (JSON).
+
+            JSON notation. Just adding the key values in quotations
+
+                - var obj = {
+                    'key': 'value',
+                    'number': 45,
+                    'arr': [1, 2, 3],
+                };
+
+                to access
+                    -console.log(obj.key) will give us the string of value.
+
+        - AJAX with jQuery
+
+            // making an API call using AJAX
+            // .done method waits to run the code until the API return the requested info
+            //instead of .get() you can use .ajax() that has a default of a GET request.
+
+            $.get('url of API here').done(function(info) {
+                //code using info pulled from API here
+                //info parameter is required to access the info from the request
+            });
+
+            //.post()
+            //used to add a record
+            $.post
+
+            Have all of your code that deals with info pulled from an API INSIDE the .done function.
+
+            //.fail()
+            $.fail(function(){
+
+            });
+                -used to supply the user with information on why their request doesnt work.
+
+
+            //.always()
+            $.always(function(){
+                //runs code whether the request from the API passes or fails
+            });
+
+
 
 
 
