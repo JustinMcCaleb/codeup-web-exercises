@@ -3,34 +3,34 @@
 <head>
     <title>Online Store</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<style>
-    body{
-        height: 100vh;
-        width: 100vw;
-    }
-    table, tr, th, td {
-        border: 2px solid black;
-    }
-
-</style>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #cddbe3;
+        }
+        form{
+            width: 60%;
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column align-items-center justify-content-center">
 
 <h1>My Tool Store</h1>
-<form action="">
-<table id="products" class="table">
-    <thead>
+<form action="" class="d-flex flex-column justify-content-center">
+<table id="products" class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
         <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Quantity</th>
+            <th class="text-center">Price</th>
+            <th class="text-center">Categories</th>
         </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-<button class="refresh" type="submit">Refresh Table</button>
+<button class="refresh btn-secondary text-dark" type="submit">Refresh Table</button>
 </form>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -47,7 +47,7 @@
             for(var i = 0; i < data.length; i += 1) {
                 // TODO: Take the data from inventory.json and append it to the products table
 
-                $('#insertProducts').append('<tr><td>' + data[i].title + '</td>' + '<td>' + data[i].quantity + '</td>' + '<td>' + data[i].price + '</td>' + '<td>' + data[i].categories + '</td>' + '</tr>');
+                $('#insertProducts').append('<tr class="table-dark"><td class="text-center text-dark">' + data[i].title + '</td>' + '<td class="text-center text-dark">' + data[i].quantity + '</td>' + '<td class="text-center text-dark">' + data[i].price + '</td>' + '<td class="text-center text-dark">' + data[i].categories + '</td>' + '</tr>');
             }
         });
 
