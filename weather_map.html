@@ -12,7 +12,7 @@
     </head>
     <body>
 
-        <div class="card" id="weatherInfo"></div>
+        <div class="cardBucket d-flex" id="weatherInfo"></div>
 
 
     <!--jQuery & bootstrap-->
@@ -49,28 +49,32 @@
         $.get(weatherUrl, weatherOptions).done(function(data) {
             //use a '.' to access a property in the JSON or a ['index'] to access an array index.
             console.log(data);
-            // console.log(parseTime(data.daily[0].sunrise));
+            // console.log(typeof data.daily);
             // console.log(data.daily[0].feels_like.morn);
             // console.log(parseDate(data.daily[0].dt));
 
-            $('#weatherInfo').append(
-                '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[0].dt) + '</div>'
-                +
-                '<ul class="list-group list-group-flush">'
-                +
-                '<li class="list-group-item d-flex justify-content-center">' + data.daily[0].temp.day + '</li>'
-                +
-                '<li class="list-group-item d-flex justify-content-center">Condition: ' + data.daily[0].weather[0].description + '</li>'
-                +
-                '<li class="list-group-item d-flex justify-content-center">Humidity: ' + data.daily[0].humidity + '%</li>'
-                +
-                '<li class="list-group-item d-flex justify-content-center">Wind: ' + data.daily[0].wind_speed + '</li>'
-                +
-                '<li class="list-group-item d-flex justify-content-center">Pressure: ' + data.daily[0].pressure + '</li>'
-                +
-                '</ul>'
-            )
+            for(var i = 0; i <= data.daily.length - 3; i += 1) {
 
+
+                $('#weatherInfo').append(
+                    '<div class="card">' +
+                    '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
+                    +
+                    '<ul class="list-group list-group-flush">'
+                    +
+                    '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="75" height="75" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
+                    +
+                    '<li class="list-group-item">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
+                    +
+                    '<li class="list-group-item">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
+                    +
+                    '<li class="list-group-item">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
+                    +
+                    '<li class="list-group-item">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
+                    +
+                    '</ul></div>'
+                )
+            }
         });
         // <div class="card" style="width: 18rem;">
         //     <div class="card-header">
