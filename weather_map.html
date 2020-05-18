@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather App</title>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- MapBox -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+        <style>
+            body {
+                height: 100%;
+                width: 100vw;
+            }
+
+            main {
+                height: 100%;
+            }
+
+            .card {
+                width: 15rem;
+            }
+
+            .row {
+                width: 100%;
+            }
+
+            #mapContainer {
+                height: 500px;
+            }
+
+            #map {
+                /*height: 100%;*/
+                width: 97%;
+                /*border: 5px solid black;*/
+            }
+        </style>
+    </head>
+    <body class="p-0 m-0">
+
+        <main class="container-fluid p-0 m-0">
+            <div class="row d-flex justify-content-center m-0">
+                <div class="cardBucket d-flex justify-content-center" id="weatherInfo"></div>
+            </div>
+        <!-- Mapbox -->
+            <div class="d-flex justify-content-center m-3" id="mapContainer">
+                <div class="" id='map'></div>
+            </div>
+        </main>
+
+
+
+
+
+        <!--jQuery & bootstrap-->
+        <script src="js/jquery-2.2.4.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <!--API Key file-->
+        <script src="js/keys.js"></script>
+        <!-- Mapbox -->
+        <script>
+            mapboxgl.accessToken = mapboxKey;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9'
+            });
+        </script>
+
+        <script>
+            'use strict';
+
+            // Send a request to OpenWeatherMap OneCall API
+            var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+            var weatherOptions = {
+                lat: 29.4241,
+                lon: -98.4936,
+                appid: OPEN_WEATHER_APPID,
+                exclude: 'minutely, current, hourly',
+                units: 'imperial',
+            };
+
+            //the property dt is a long number representing a date. use 'new Date(number here * 1000). Then add .toDateString(); for better presentation.
+            function parseDate(timestamp){
+                // var todayDate = new Date(data.daily[0].dt * 1000);
+                return new Date(timestamp * 1000).toLocaleDateString();
+            }
+
+            function parseTime(timestamp) {
+                return new Date(timestamp * 1000).toLocaleTimeString();
+            }
+
+            $.get(weatherUrl, weatherOptions).done(function(data) {
+                //use a '.' to access a property in the JSON or a ['index'] to access an array index.
+                console.log(data);
+                // console.log(typeof data.daily);
+                // console.log(data.daily[0].feels_like.morn);
+                // console.log(parseDate(data.daily[0].dt));
+
+                for(var i = 0; i <= data.daily.length - 3; i += 1) {
+
+
+                    $('#weatherInfo').append(
+                        '<div class="card m-3">' +
+                        '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
+                        +
+                        '<ul class="list-group list-group-flush">'
+                        +
+                        '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="75" height="75" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
+                        +
+                        '<li class="list-group-item">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
+                        +
+                        '<li class="list-group-item">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
+                        +
+                        '<li class="list-group-item">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
+                        +
+                        '<li class="list-group-item">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
+                        +
+                        '</ul></div>'
+                    )
+                }
+            });
+
+
+
+        </script>
+
+    </body>
+</html>
