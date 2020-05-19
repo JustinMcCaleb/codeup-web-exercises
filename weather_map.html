@@ -70,7 +70,7 @@
                 <div class="cardBucket d-flex justify-content-center" id="weatherInfo"></div>
             </div>
         <!-- Mapbox -->
-            <div class="d-flex justify-content-center mx-3 my-1" id="mapContainer">
+            <div class="d-flex justify-content-center mx-3 my-2" id="mapContainer">
                 <div class="" id='map'></div>
             </div>
         </main>
@@ -142,20 +142,20 @@
 
 
                     $('#weatherInfo').append(
-                        '<div class="card mx-3 my-1">' +
+                        '<div class="card mx-3 my-1 border-bottom">' +
                         '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
                         +
                         '<ul class="list-group list-group-flush">'
                         +
                         '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="75" height="75" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
                         +
-                        '<li class="list-group-item">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
+                        '<li class="list-group-item my-0">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
                         +
-                        '<li class="list-group-item">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
+                        '<li class="list-group-item my-0">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
                         +
-                        '<li class="list-group-item">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
+                        '<li class="list-group-item my-0">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
                         +
-                        '<li class="list-group-item">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
+                        '<li class="list-group-item my-0">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
                         +
                         '</ul></div>'
                     )
