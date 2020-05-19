@@ -107,12 +107,15 @@
                 .setLngLat([-98.4916, 29.4260])
                 .addTo(map);
 
+            var nav = new mapboxgl.NavigationControl();
+            map.addControl(nav, 'top-left');
+
             //var that stores the markers coordinates after drag end
 
             //function that updates open weather map coordinates to show weather info of coordinates on drag end
             function onDragEnd() {
             var lngLat = Object.values(marker.getLngLat());
-                console.log(lngLat[0]);
+                // console.log(lngLat[0]);
                 // Send a request to OpenWeatherMap OneCall API
             var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
             var weatherOptions = {
@@ -138,7 +141,11 @@
                 //use a '.' to access a property in the JSON or a ['index'] to access an array index.
                 // console.log(data);
 
+                //Used to clear out cards HTML or the loop wont start with current day, but will shift the current day to middle card on every other drag end
+                $('#weatherInfo').html('');
+
                 for(var i = 0; i <= data.daily.length - 3; i += 1) {
+                    console.log(parseDate(data.daily[i].dt));
 
 
                     $('#weatherInfo').append(
@@ -162,7 +169,7 @@
                 }
             });
             reverseGeocode({lng: lngLat[0], lat: lngLat[1]}, mapboxKey).then(function(results) {
-                console.log(results);
+                // console.log(results);
                 // var resultsArray = results.split(',');
                 // logs the address for The Alamo
                 // console.log(resultsArray);
