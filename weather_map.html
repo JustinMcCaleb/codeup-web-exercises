@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <title>Weather App</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -21,6 +22,7 @@
 
             .card {
                 width: 15rem;
+                height: 24rem;
             }
 
             .row {
@@ -28,7 +30,7 @@
             }
 
             #mapContainer {
-                height: 500px;
+                height: 470px;
             }
 
             #map {
@@ -41,11 +43,34 @@
     <body class="p-0 m-0">
 
         <main class="container-fluid p-0 m-0">
+<!--            <div class="row m-0">-->
+                <nav class="navbar navbar-expand navbar-light bg-primary">
+                    <a class="navbar-brand" href="#">Weather App</a>
+<!--                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                        <span class="navbar-toggler-icon"></span>-->
+<!--                    </button>-->
+                    <div class="collapse navbar-collapse" id="navbarText">
+<!--                        <ul class="navbar-nav mr-auto">-->
+<!--                            <li class="nav-item active">-->
+<!--                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a class="nav-link" href="#">Features</a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a class="nav-link" href="#">Pricing</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+                        <span class="navbar-text ml-auto"></span>
+                    </div>
+                </nav>
+<!--            </div>-->
+
             <div class="row d-flex justify-content-center m-0">
                 <div class="cardBucket d-flex justify-content-center" id="weatherInfo"></div>
             </div>
         <!-- Mapbox -->
-            <div class="d-flex justify-content-center m-3" id="mapContainer">
+            <div class="d-flex justify-content-center mx-3 my-1" id="mapContainer">
                 <div class="" id='map'></div>
             </div>
         </main>
@@ -61,23 +86,38 @@
 
         <!--API Key file-->
         <script src="js/keys.js"></script>
-        <!-- Mapbox -->
-        <script>
-            mapboxgl.accessToken = mapboxKey;
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v9'
-            });
-        </script>
 
+        <!-- Mapbox Geocoder Util Methods -->
+        <script src="js/mapbox-geocoder-utils.js"></script>
         <script>
             'use strict';
 
-            // Send a request to OpenWeatherMap OneCall API
+            //Mapbox Start
+            mapboxgl.accessToken = mapboxKey;
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 9,
+                center: [-98.4916, 29.4252]
+            });
+
+            var marker = new mapboxgl.Marker({
+                draggable: true
+            })
+                .setLngLat([-98.4916, 29.4260])
+                .addTo(map);
+
+            //var that stores the markers coordinates after drag end
+
+            //function that updates open weather map coordinates to show weather info of coordinates on drag end
+            function onDragEnd() {
+            var lngLat = Object.values(marker.getLngLat());
+                console.log(lngLat[0]);
+                // Send a request to OpenWeatherMap OneCall API
             var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
             var weatherOptions = {
-                lat: 29.4241,
-                lon: -98.4936,
+                lat: lngLat[1],
+                lon: lngLat[0],
                 appid: OPEN_WEATHER_APPID,
                 exclude: 'minutely, current, hourly',
                 units: 'imperial',
@@ -93,18 +133,16 @@
                 return new Date(timestamp * 1000).toLocaleTimeString();
             }
 
+            //AJAX call that uses var from above to get accurate weather data based on coordinates
             $.get(weatherUrl, weatherOptions).done(function(data) {
                 //use a '.' to access a property in the JSON or a ['index'] to access an array index.
-                console.log(data);
-                // console.log(typeof data.daily);
-                // console.log(data.daily[0].feels_like.morn);
-                // console.log(parseDate(data.daily[0].dt));
+                // console.log(data);
 
                 for(var i = 0; i <= data.daily.length - 3; i += 1) {
 
 
                     $('#weatherInfo').append(
-                        '<div class="card m-3">' +
+                        '<div class="card mx-3 my-1">' +
                         '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
                         +
                         '<ul class="list-group list-group-flush">'
@@ -123,7 +161,18 @@
                     )
                 }
             });
-
+            reverseGeocode({lng: lngLat[0], lat: lngLat[1]}, mapboxKey).then(function(results) {
+                console.log(results);
+                // var resultsArray = results.split(',');
+                // logs the address for The Alamo
+                // console.log(resultsArray);
+                $('.navbar-text').html(results.features[2].place_name)
+            });
+            }
+            //calls the function immediately so the weather info cards can populate.
+            onDragEnd();
+            //updates the coordinates for the Open Weather map every time the marker is dragged and released
+            marker.on('dragend', onDragEnd);
 
 
         </script>
