@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <title>Weather App</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -21,6 +22,7 @@
 
             .card {
                 width: 15rem;
+                height: 24rem;
             }
 
             .row {
@@ -28,7 +30,7 @@
             }
 
             #mapContainer {
-                height: 500px;
+                height: 470px;
             }
 
             #map {
@@ -41,11 +43,22 @@
     <body class="p-0 m-0">
 
         <main class="container-fluid p-0 m-0">
+                <nav class="navbar navbar-expand navbar-dark bg-primary">
+                    <a class="navbar-brand" href="#">Weather App</a>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <span class="navbar-text ml-auto mr-2"></span>
+                        <form class="form-inline">
+                            <input id="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button id="inputBtn" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+
             <div class="row d-flex justify-content-center m-0">
                 <div class="cardBucket d-flex justify-content-center" id="weatherInfo"></div>
             </div>
         <!-- Mapbox -->
-            <div class="d-flex justify-content-center m-3" id="mapContainer">
+            <div class="d-flex justify-content-center mx-3 my-2" id="mapContainer">
                 <div class="" id='map'></div>
             </div>
         </main>
@@ -61,71 +74,190 @@
 
         <!--API Key file-->
         <script src="js/keys.js"></script>
-        <!-- Mapbox -->
-        <script>
-            mapboxgl.accessToken = mapboxKey;
-            var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v9'
-            });
-        </script>
 
+        <!-- Mapbox Geocoder Util Methods -->
+        <script src="js/mapbox-geocoder-utils.js"></script>
         <script>
             'use strict';
+            $(document).ready(function(){
 
-            // Send a request to OpenWeatherMap OneCall API
-            var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
-            var weatherOptions = {
-                lat: 29.4241,
-                lon: -98.4936,
-                appid: OPEN_WEATHER_APPID,
-                exclude: 'minutely, current, hourly',
-                units: 'imperial',
-            };
+//============================================================================
+            //DRAG END
 
-            //the property dt is a long number representing a date. use 'new Date(number here * 1000). Then add .toDateString(); for better presentation.
-            function parseDate(timestamp){
-                // var todayDate = new Date(data.daily[0].dt * 1000);
-                return new Date(timestamp * 1000).toLocaleDateString();
-            }
-
-            function parseTime(timestamp) {
-                return new Date(timestamp * 1000).toLocaleTimeString();
-            }
-
-            $.get(weatherUrl, weatherOptions).done(function(data) {
-                //use a '.' to access a property in the JSON or a ['index'] to access an array index.
-                console.log(data);
-                // console.log(typeof data.daily);
-                // console.log(data.daily[0].feels_like.morn);
-                // console.log(parseDate(data.daily[0].dt));
-
-                for(var i = 0; i <= data.daily.length - 3; i += 1) {
+                mapboxgl.accessToken = mapboxKey;
+                var map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/streets-v9',
+                    zoom: 9,
+                    center: [-98.4916, 29.4252]
+                });
 
 
-                    $('#weatherInfo').append(
-                        '<div class="card m-3">' +
-                        '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
-                        +
-                        '<ul class="list-group list-group-flush">'
-                        +
-                        '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="75" height="75" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
-                        +
-                        '<li class="list-group-item">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
-                        +
-                        '<li class="list-group-item">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
-                        +
-                        '<li class="list-group-item">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
-                        +
-                        '<li class="list-group-item">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
-                        +
-                        '</ul></div>'
-                    )
+                var marker = new mapboxgl.Marker({
+                    draggable: true
+                })
+                    .setLngLat([-98.4916, 29.4260])
+                    .addTo(map);
+
+
+            //function that updates open weather map coordinates to show weather info of coordinates on drag end
+            function onDragEnd() {
+
+                //var that stores the markers coordinates after drag end
+                var lngLat = Object.values(marker.getLngLat());
+
+                // Send a request to OpenWeatherMap OneCall API
+                var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+                var weatherOptions = {
+                    lat: lngLat[1],
+                    lon: lngLat[0],
+                    appid: OPEN_WEATHER_APPID,
+                    exclude: 'minutely, current, hourly',
+                    units: 'imperial',
+                };
+
+                //the property dt is a long number representing a date. use 'new Date(number here * 1000). Then add .toDateString(); for better presentation.
+                function parseDate(timestamp){
+                    // var todayDate = new Date(data.daily[0].dt * 1000);
+                    return new Date(timestamp * 1000).toLocaleDateString();
                 }
+
+                //Pre built function to deliver time in correct format
+                function parseTime(timestamp) {
+                    return new Date(timestamp * 1000).toLocaleTimeString();
+                }
+
+                //AJAX call that uses var from above to get accurate weather data based on coordinates
+                $.get(weatherUrl, weatherOptions).done(function(data) {
+
+                    //Used to clear out cards HTML or the loop wont start with current day, but will shift the current day to middle card on every other drag end
+                    $('#weatherInfo').html('');
+
+                    //for loop to iterate the weather map data returned from .get above
+                    for(var i = 0; i <= data.daily.length - 3; i += 1) {
+
+                        //adds weather cards to page
+                        $('#weatherInfo').append(
+                            '<div class="card mx-3 my-1 border-bottom">' +
+                            '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
+                            +
+                            '<ul class="list-group list-group-flush">'
+                            +
+                            '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="50" height="50" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
+                            +
+                            '<li class="list-group-item my-0">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
+                            +
+                            '<li class="list-group-item my-0">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
+                            +
+                            '<li class="list-group-item my-0">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
+                            +
+                            '<li class="list-group-item my-0">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
+                            +
+                            '</ul></div>'
+                        )
+                    }
+                });
+                //Adds current location to nav bar based on marker position
+                reverseGeocode({lng: lngLat[0], lat: lngLat[1]}, mapboxKey).then(function(results) {
+                    $('.navbar-text').html(results.features[2].place_name)
+                });
+            }
+            //calls the function immediately so the weather info cards can populate.
+            onDragEnd();
+            //updates the coordinates for the Open Weather map every time the marker is dragged and released
+            marker.on('dragend', onDragEnd);
+
+
+
+
+
+
+
+
+
+
+
+
+
+//============================================================================
+
+
+            //click function that updates page
+            $('#inputBtn').click(function(e) {
+                e.preventDefault();
+
+                //var to get value from search bar
+                var inputText = document.getElementById('input').value;
+
+                //geocode to handle input from search bar
+                geocode(inputText, mapboxKey).then(function(result) {
+                    map.setCenter(result.features[0].center);
+                    map.setZoom(9);
+
+                    //sets marker location to coordinates from typed in location
+                    marker.setLngLat(result.features[0].center);
+
+                    //var that stores the markers coordinates after drag end
+                    var lngLat = Object.values(marker.getLngLat());
+
+
+                    // Send a request to OpenWeatherMap OneCall API
+                    var weatherUrl = 'https://api.openweathermap.org/data/2.5/onecall';
+                    var weatherOptions = {
+                        lat: lngLat[1],
+                        lon: lngLat[0],
+                        appid: OPEN_WEATHER_APPID,
+                        exclude: 'minutely, current, hourly',
+                        units: 'imperial',
+                    };
+
+                    //the property dt is a long number representing a date. use 'new Date(number here * 1000). Then add .toDateString(); for better presentation.
+                    function parseDate(timestamp){
+                        return new Date(timestamp * 1000).toLocaleDateString();
+                    }
+                    //Pre built function to deliver time in correct format
+                    function parseTime(timestamp) {
+                        return new Date(timestamp * 1000).toLocaleTimeString();
+                    }
+
+                    //AJAX call that uses var from above to get accurate weather data based on coordinates
+                    $.get(weatherUrl, weatherOptions).done(function(data) {
+
+                        //Used to clear out cards HTML or the loop wont start with current day, but will shift the current day to middle card on every other drag end
+                        $('#weatherInfo').html('');
+
+                        //for loop to iterate the weather map data returned from .get above
+                        for(var i = 0; i <= data.daily.length - 3; i += 1) {
+
+                            //adds weather cards to page
+                            $('#weatherInfo').append(
+                                '<div class="card mx-3 my-1 border-bottom">' +
+                                '<div class="card-header d-flex justify-content-center">' + parseDate(data.daily[i].dt) + '</div>'
+                                +
+                                '<ul class="list-group list-group-flush">'
+                                +
+                                '<li class="list-group-item d-flex flex-column align-items-center"><strong>' + data.daily[i].temp.day + '&#8457;' + '</strong>' + '<img width="50" height="50" src="http://openweathermap.org/img/w/' + data.daily[i].weather[0].icon + '.png">' + '</li>'
+                                +
+                                '<li class="list-group-item my-0">Condition: <b>' + data.daily[i].weather[0].description + '</b></li>'
+                                +
+                                '<li class="list-group-item my-0">Humidity: <b>' + data.daily[i].humidity + '%</b></li>'
+                                +
+                                '<li class="list-group-item my-0">Wind: <b>' + data.daily[i].wind_speed + '</b></li>'
+                                +
+                                '<li class="list-group-item my-0">Pressure: <b>' + data.daily[i].pressure + '</b></li>'
+                                +
+                                '</ul></div>'
+                            )
+                        }
+                    });
+                    //Adds current location to nav bar based on marker position
+                    reverseGeocode({lng: lngLat[0], lat: lngLat[1]}, mapboxKey).then(function(results) {
+                        $('.navbar-text').html(results.features[2].place_name)
+                    });
+
             });
-
-
-
+            });
+            });
         </script>
 
     </body>
