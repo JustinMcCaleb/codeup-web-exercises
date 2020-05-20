@@ -48,29 +48,29 @@
 
         'use strict';
 
-        $(document).ready(function(){
+        // $(document).ready(function(){
 
-            //.click function on btn1 to retrieve new joke
-            $('#btn1').click(function(){
-
-                //AJAX get request to Chuck Norris joke API
-                $.get('http://api.icndb.com/jokes/random').done(function(data){
-                    $('#bucket').html(data.value.joke)
-                });
-            });
-
-            //.click function on btn2 to retrieve new quote
-            $('#btn2').click(function(){
-
-                //Ajax get request to Programming quote
-                $.get('http://quotes.stormconsultancy.co.uk/random.json').done(function(data){
-                    console.log(data.quote);
-                    $('#bucket').html(data.quote)
-                });
-
-            });
-
-        });
+        //     //.click function on btn1 to retrieve new joke
+        //     $('#btn1').click(function(){
+        //
+        //         //AJAX get request to Chuck Norris joke API
+        //         $.get('http://api.icndb.com/jokes/random').done(function(data){
+        //             $('#bucket').html(data.value.joke)
+        //         });
+        //     });
+        //
+        //     //.click function on btn2 to retrieve new quote
+        //     $('#btn2').click(function(){
+        //
+        //         //Ajax get request to Programming quote
+        //         $.get('http://quotes.stormconsultancy.co.uk/random.json').done(function(data){
+        //             console.log(data.quote);
+        //             $('#bucket').html(data.quote)
+        //         });
+        //
+        //     });
+        //
+        // });
     </script>
     </body>
 </html>
