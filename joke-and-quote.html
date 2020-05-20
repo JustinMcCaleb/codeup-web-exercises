@@ -3,10 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>Joke And Quote</title>
+        <style>
+            body {
+                height: 100vh;
+                box-sizing: border-box;
+                background-color: #afffdc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #bucket {
+                height: 20rem;
+                width: 30rem;
+                border: 2px solid #36c9ff;
+            }
+
+            button {
+                height: 20px;
+                width: 75px;
+                margin: 20px;
+            }
+        </style>
     </head>
     <body>
 
+        <!-- Button for joke refresh -->
+        <button id="btn1">Joke</button>
 
+        <!-- Empty div for joke and quote -->
+        <div id="bucket"></div>
+
+        <!-- Button for quote refresh -->
+        <button id="btn2">Quote</button>
+
+    <!-- script link for locally stored jquery -->
     <script src="js/jquery-2.2.4.js"></script>
     <script>
 
@@ -19,7 +50,25 @@
 
         $(document).ready(function(){
 
+            //.click function on btn1 to retrieve new joke
+            $('#btn1').click(function(){
 
+                //AJAX get request to Chuck Norris joke API
+                $.get('http://api.icndb.com/jokes/random').done(function(data){
+                    $('#bucket').html(data.value.joke)
+                });
+            });
+
+            //.click function on btn2 to retrieve new quote
+            $('#btn2').click(function(){
+
+                //Ajax get request to Programming quote
+                $.get('http://quotes.stormconsultancy.co.uk/random.json').done(function(data){
+                    console.log(data.quote);
+                    $('#bucket').html(data.quote)
+                });
+
+            });
 
         });
     </script>
