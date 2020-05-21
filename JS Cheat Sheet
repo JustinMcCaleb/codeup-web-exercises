@@ -272,9 +272,33 @@
 
         template strings
 
+            - back ticks `` and curly brackets {} are NOT a part of jquery, just used for template stings in es6
+
             for(let person of house) {
                 console.log(`${person.name} is the ${person.role} of the family`)
             }
+
+            functions
+
+                - can be written faster now if the function only has one line of code
+
+                    - OLD style
+                    function add(num1, num2) {
+                        return num1 + num2;
+                    }
+
+                    - Same functionality as above function
+                    let add = (num1, num2) => n1 + n2;
+
+            multiple line function
+
+                - needs curly brackets and return statement
+                - if returning an object our code body will be the same (curly brackets and return statement)
+
+                const makeABasketballMan = name => {
+                    return {name, heightInInches: 84};
+                };
+
 
 
 
