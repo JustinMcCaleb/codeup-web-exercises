@@ -179,7 +179,7 @@
             - .next() — Get the immediately following sibling in the set of matched elements.
 
 
-        - AJAX
+====== AJAX ======
             - Asynchronous JavaScript and XML
 
             -AJAX requests will often employ the use of an API, or JSON file and return us information using JavaScript Object Notation (JSON).
@@ -225,9 +225,109 @@
             });
 
 
+===== es6 =====
+
+        let variable
+
+            var oldVariables = 'jim';
+
+            let newVariables = 'jim';
+                - let variables are not accessible outside of the block of code it's initialized in.
+
+                    function passcodeHandler() {
+                       let passcode = SOME CODE HERE;
+                    };
+
+                    *THIS DOES NOT WORK*
+                    console.log(passcode)
 
 
 
+
+                - but you can establish the let variable OUTSIDE of the block of code and it will be accessible.
+
+                    let passcode;
+
+                    function passcodeHandler() {
+                        *Don't use the 'let' keyword INSIDE the variable if you want it to be scoped globally*
+                        passcode = SOME CODE HERE;
+                    };
+
+        const variable
+
+            -the value of a const can NOT be reassigned but CAN be accessed.
+
+            - constants can also be used as a collection
+                - you can use a .push() to ADD info to a const collection
+
+                const house = [{name: 'wilma', role: 'mother', gender: 'F'}, {name: 'fred', role: 'father', gender: 'M'}];
+
+                house.push({name: 'bam bam', role: 'son-in-law', gender: 'M'});
+
+                for(let person of house) {
+                    console.log(person.name)
+                }
+                    -person in for loop refers to each object in house array
+
+
+        template strings
+
+            - back ticks `` and curly brackets {} are NOT a part of jquery, just used for template stings in es6
+
+            for(let person of house) {
+                console.log(`${person.name} is the ${person.role} of the family`)
+            }
+
+            functions
+
+                - can be written faster now if the function only has one line of code
+
+                    - OLD style
+                    function add(num1, num2) {
+                        return num1 + num2;
+                    }
+
+                    - Same functionality as above function
+                    let add = (num1, num2) => n1 + n2;
+
+            multiple line function
+
+                - needs curly brackets and return statement
+                - if returning an object our code body will be the same (curly brackets and return statement)
+
+                const makeABasketballMan = name => {
+                    return {name, heightInInches: 84};
+                };
+
+        Map, filter, and reduce
+
+            - These functions will NOT affect the value of the original array, they will return a new copy
+
+            - different methods that allow us to manipulate arrays
+
+            MAP
+            - map will allow us to make a copy of an array where each element of an array is changed with a callback function
+
+                EXAMPLE
+                let favNums = [3, 666, 7, 14];
+
+                let dubMuns = favNums.map((number) => {
+                    return number * 2;
+                });
+
+                console.log(dubNums) : will return all numbers in array * 2
+
+                EXAMPLE
+                let cheeses = ['swiss', 'chedder', 'kraft singles'];
+
+                cheeses = cheeses.map((cheese) => cheese.toUpperCase());
+
+
+            FILTER
+            - will allow us to make a copy of an array where only the elements that meet certain criteria are in the new copy
+
+            REDUCE
+            -allows us to take a collection and turn it into a single value
 
 
 
