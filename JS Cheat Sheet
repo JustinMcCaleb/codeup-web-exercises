@@ -299,10 +299,35 @@
                     return {name, heightInInches: 84};
                 };
 
+        Map, filter, and reduce
+
+            - These functions will NOT affect the value of the original array, they will return a new copy
+
+            - different methods that allow us to manipulate arrays
+
+            MAP
+            - map will allow us to make a copy of an array where each element of an array is changed with a callback function
+
+                EXAMPLE
+                let favNums = [3, 666, 7, 14];
+
+                let dubMuns = favNums.map((number) => {
+                    return number * 2;
+                });
+
+                console.log(dubNums) : will return all numbers in array * 2
+
+                EXAMPLE
+                let cheeses = ['swiss', 'chedder', 'kraft singles'];
+
+                cheeses = cheeses.map((cheese) => cheese.toUpperCase());
 
 
+            FILTER
+            - will allow us to make a copy of an array where only the elements that meet certain criteria are in the new copy
 
-
+            REDUCE
+            -allows us to take a collection and turn it into a single value
 
 
 
