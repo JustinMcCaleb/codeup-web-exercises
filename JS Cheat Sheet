@@ -179,7 +179,7 @@
             - .next() — Get the immediately following sibling in the set of matched elements.
 
 
-        - AJAX
+====== AJAX ======
             - Asynchronous JavaScript and XML
 
             -AJAX requests will often employ the use of an API, or JSON file and return us information using JavaScript Object Notation (JSON).
@@ -224,6 +224,57 @@
                 //runs code whether the request from the API passes or fails
             });
 
+
+===== es6 =====
+
+        let variable
+
+            var oldVariables = 'jim';
+
+            let newVariables = 'jim';
+                - let variables are not accessible outside of the block of code it's initialized in.
+
+                    function passcodeHandler() {
+                       let passcode = SOME CODE HERE;
+                    };
+
+                    *THIS DOES NOT WORK*
+                    console.log(passcode)
+
+
+
+
+                - but you can establish the let variable OUTSIDE of the block of code and it will be accessible.
+
+                    let passcode;
+
+                    function passcodeHandler() {
+                        *Don't use the 'let' keyword INSIDE the variable if you want it to be scoped globally*
+                        passcode = SOME CODE HERE;
+                    };
+
+        const variable
+
+            -the value of a const can NOT be reassigned but CAN be accessed.
+
+            - constants can also be used as a collection
+                - you can use a .push() to ADD info to a const collection
+
+                const house = [{name: 'wilma', role: 'mother', gender: 'F'}, {name: 'fred', role: 'father', gender: 'M'}];
+
+                house.push({name: 'bam bam', role: 'son-in-law', gender: 'M'});
+
+                for(let person of house) {
+                    console.log(person.name)
+                }
+                    -person in for loop refers to each object in house array
+
+
+        template strings
+
+            for(let person of house) {
+                console.log(`${person.name} is the ${person.role} of the family`)
+            }
 
 
 
