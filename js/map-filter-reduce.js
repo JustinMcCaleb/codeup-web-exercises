@@ -85,7 +85,7 @@
     }, 'Your instructors are: ');
     console.log(nameString);
 
-    //BONUS
+    //BONUS - getting each unique language into an array
     let languageList = users.reduce((langList, user) => {
         for (let lang of user.languages) {
             if(!langList.includes(lang)) {
