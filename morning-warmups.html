@@ -179,17 +179,60 @@
         
         //May 15 2020
         // Write a JavaScript function that takes in a string and returns the number of words in the string. If the function is ever passed an argument that is not a string, return the number 0
-        function numberOfWordsInString(str) {
-            if(typeof str !== 'string') {
-                return 0;
-            }else {
-                return str.split(" ").length;
-            }
-        }
+        // function numberOfWordsInString(str) {
+        //     if(typeof str !== 'string') {
+        //         return 0;
+        //     }else {
+        //         return str.split(" ").length;
+        //     }
+        // }
+        //
+        // console.log(numberOfWordsInString('hello this is a test'), 5);
+        // console.log(numberOfWordsInString('if you want it that bad go get it'), 9);
+        // console.log(numberOfWordsInString(true), 0);
 
-        console.log(numberOfWordsInString('hello this is a test'), 5);
-        console.log(numberOfWordsInString('if you want it that bad go get it'), 9);
-        console.log(numberOfWordsInString(true), 0);
+
+        //May 22 2020
+        // Given the following array of objects, write a function in JavaScript that returns an array of objects where each hamster has a heightInMM greater than 85.
+
+            var hamsters = [
+            {
+                name: "Hamtaro",
+                heightInMM: 86,
+                fur: ['orange', 'white'],
+                gender: "male",
+                dateOfBirth: "August 6"
+            } , {
+                name: "Bijou",
+                heightInMM: 75,
+                fur: ['white'],
+                gender: "female",
+                dateOfBirth: "July 10"
+            } , {
+                name: "Oxnard",
+                heightInMM: 100,
+                fur: ['grey', 'white'],
+                gender: "male",
+                dateOfBirth: "May 3"
+            } , {
+                name: "Boss",
+                heightInMM: 120,
+                fur: ['black', 'cream'],
+                gender: "male",
+                dateOfBirth: "Spetember 21"
+            } , {
+                name: "Snoozer",
+                heightInMM: 85,
+                fur: ['brown', 'white'],
+                gender: "male",
+                dateOfBirth: "January 14"
+            }
+        ];
+
+        const heightGreaterThan85 = hamsters.filter(hamster => {
+            return hamster.heightInMM > 85;
+        });
+        console.log(heightGreaterThan85);
 
 
     </script>
