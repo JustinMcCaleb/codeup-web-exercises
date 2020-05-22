@@ -61,7 +61,7 @@
     }, 0);
     console.log(`The total years of experience is: ${totalYears}`);
 
-    const average = (user) => totalYears / user.length;
+    const average = (user) => `Your average sales experience is: ${totalYears / user.length}`;
     console.log(average(users));
 
 
