@@ -85,4 +85,15 @@
     }, 'Your instructors are: ');
     console.log(nameString);
 
+    //BONUS
+    let languageList = users.reduce((langList, user) => {
+        for (let lang of user.languages) {
+            if(!langList.includes(lang)) {
+                langList.push(lang);
+            }
+        }
+        return langList;
+    }, []);
+    console.log(languageList);
+
 })();
