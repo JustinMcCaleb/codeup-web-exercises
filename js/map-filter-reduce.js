@@ -42,7 +42,9 @@ $(document).ready(function(){
 
     //Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
 
-
+    const filteredLanguages = users.filter(user => {
+        return user.languages >= 3
+    });
 
 
 
