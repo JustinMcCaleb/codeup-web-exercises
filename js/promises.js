@@ -8,8 +8,11 @@
         {headers: {'Authorization': `token ${GITHUB_TOKEN}`}})
         .then(response => response.json())
         // .then(data => console.log(data))
-
-        .then(data => console.log(data[0].commit.author.date));
+        .then((data) => {
+            let newDate = new Date(data[0].commit.author.date);
+            console.log(newDate)
+        });
+        // .then(data => console.log(data[0].commit.author.date));
             // - use with https://api.github.com/repos/JustinMcCaleb/codeup-web-exercises/commits to get last commit from codeup-web-exercises
 
 
