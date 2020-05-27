@@ -332,6 +332,53 @@
 
 
 
+===== npm ======
+
+
+        npm walkthrough
+
+        Create empty project in intelij
+            - make first commit : .gitignore is a good place to start
+            - make gitignore file, add files to ignore
+                -public/main.js
+                -*.map
+                -node_modules
+                -.idea/* - helps avoid merge conflicts
+                *.iml - helps avoid merge conflicts
+            - git init
+            - git add and commit gitignore file
+            - create repo on GitHub and run middle command to link local to GitHub remote
+
+            - npm init -y (-y skips all meta data options in package.json file)
+
+            - npm install PACKAGE_NAME // npm i PACKAGE_NAME works the same
+
+                (packages that we will use for our exercise, will change based on needs)
+
+                you can just use npm install packageName packageName packageName (using spaces)
+                - @babel/core
+                - babel-loader
+                - @babel/preset-env
+                - webpack
+                - webpack-cli
+
+            - add webpack.config.js to root of repo
+            - add src folder to root of project
+            - add file into src folder called index.js
+            - add additional property to package.json under the scripts property, called “build”: “webpack - -mode=development” or “webpack - -mode=production”
+            -npm run build
+
+
+
+        How to restart to get more practice
+            - create another local directory
+            - open up in IntelliJ
+            - npm init -y
+            - npm i package package package package
+
+
+
+
 
 .toFixed(2) - returns w/ 2 decimal points
 
