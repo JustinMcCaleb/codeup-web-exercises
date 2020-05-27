@@ -346,7 +346,6 @@ NOT USING
         npm walkthrough
 
         Create empty project in intelij
-            - make first commit : .gitignore is a good place to start
             - make gitignore file, add files to ignore
                 -public/main.js
                 -*.map
