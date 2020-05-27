@@ -334,6 +334,14 @@
 
 ===== npm ======
 
+NOT USING
+    - 'use strict';
+    - an IIFE - (function(){
+        //all code here
+    }();
+
+
+
 
         npm walkthrough
 
