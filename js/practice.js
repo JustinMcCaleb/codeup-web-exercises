@@ -10,7 +10,9 @@
      * Example
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
-
+    function sayHello(name){
+        return "Hello, " + name + "!";
+    }
 
 
     /**
@@ -20,7 +22,8 @@
      *
      * console.log 'helloMessage' to check your work
      */
-
+    let helloMessage = sayHello("Jertioy");
+    console.log(helloMessage);
 
 
     /**
