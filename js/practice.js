@@ -32,8 +32,8 @@
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
-
-
+    let myName = "Jertioy";
+console.log(sayHello(myName));
 
 
 // Don't modify the following line, it generates a random number between 1 and 3
