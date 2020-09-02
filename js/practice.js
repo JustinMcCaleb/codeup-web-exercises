@@ -113,3 +113,11 @@ alert("Tip amount: $" + calculateTip(percentageFinal ,billTotal));
      *
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
+
+    function applyDiscount(price, discount){
+        let amountTakenOff = price * discount;
+        return price - amountTakenOff;
+    }
+
+console.log(applyDiscount(100, .2));
+console.log(applyDiscount(68, .5));
