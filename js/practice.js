@@ -93,6 +93,10 @@ console.log("Expected output is 6.37: " + calculateTip(0.25, 25.50));
      * prompt the user for the bill total and a percentage they would like to tip,
      * then display the dollar amount they should tip
      */
+let billTotal = parseFloat(prompt("Enter your bill total"));
+let percentage = parseFloat(prompt("Enter the percent to tip"));
+let percentageFinal = percentage * .01;
+alert("Tip amount: $" + calculateTip(percentageFinal ,billTotal));
 
 
     /**
