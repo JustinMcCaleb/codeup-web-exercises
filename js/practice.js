@@ -58,9 +58,15 @@ console.log(sayHello(myName));
      * number)
      */
 
+    function isTwo(num){
+        return num === 2;
+    }
+
+console.log(isTwo(random));
+console.log(isTwo(2));
 
 
-    /**
+/**
      * TODO:
      * Create a function named 'calculateTip' to calculate a tip on a bill at a
      * restaurant. The function should accept a tip percentage and the total of the
@@ -72,13 +78,25 @@ console.log(sayHello(myName));
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
 
+function calculateTip(tipPercent, billTotal){
+    return tipPercent * billTotal;
+}
 
-    /**
+console.log("Expected output is 4: " + calculateTip(.20, 20));
+console.log("Expected output is 5.9202: " + calculateTip(32.89, .18));
+console.log("Expected output is 6.37: " + calculateTip(0.25, 25.50));
+
+
+/**
      * TODO:
      * Use prompt and alert in combination with your calculateTip function to
      * prompt the user for the bill total and a percentage they would like to tip,
      * then display the dollar amount they should tip
      */
+let billTotal = parseFloat(prompt("Enter your bill total"));
+let percentage = parseFloat(prompt("Enter the percent to tip"));
+let percentageFinal = percentage * .01;
+alert("Tip amount: $" + calculateTip(percentageFinal ,billTotal));
 
 
     /**
@@ -95,3 +113,11 @@ console.log(sayHello(myName));
      *
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
+
+    function applyDiscount(price, discount){
+        let amountTakenOff = price * discount;
+        return price - amountTakenOff;
+    }
+
+console.log(applyDiscount(100, .2));
+console.log(applyDiscount(68, .5));
