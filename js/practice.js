@@ -78,8 +78,16 @@ console.log(isTwo(2));
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
 
+function calculateTip(tipPercent, billTotal){
+    return tipPercent * billTotal;
+}
 
-    /**
+console.log("Expected output is 4: " + calculateTip(.20, 20));
+console.log("Expected output is 5.9202: " + calculateTip(32.89, .18));
+console.log("Expected output is 6.37: " + calculateTip(0.25, 25.50));
+
+
+/**
      * TODO:
      * Use prompt and alert in combination with your calculateTip function to
      * prompt the user for the bill total and a percentage they would like to tip,
