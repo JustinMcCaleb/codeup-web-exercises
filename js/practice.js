@@ -58,9 +58,15 @@ console.log(sayHello(myName));
      * number)
      */
 
+    function isTwo(num){
+        return num === 2;
+    }
+
+console.log(isTwo(random));
+console.log(isTwo(2));
 
 
-    /**
+/**
      * TODO:
      * Create a function named 'calculateTip' to calculate a tip on a bill at a
      * restaurant. The function should accept a tip percentage and the total of the
